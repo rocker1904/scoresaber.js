@@ -1,0 +1,37 @@
+{
+  "name": "scoresaber.js",
+  "version": "0.1.0",
+  "description": "A useful library for interacting with the ScoreSaber API.",
+  "main": "build/main.js",
+  "types": "build/main.d.ts",
+  "files": [
+    "./build"
+  ],
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocker1904/scoresaber.js.git"
+  },
+  "author": "Rocker1904",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rocker1904/scoresaber.js/issues"
+  },
+  "homepage": "https://github.com/rocker1904/scoresaber.js#readme",
+  "dependencies": {
+    "axios": "^1.2.3",
+    "axios-retry": "^3.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "eslint": "^8.32.0",
+    "eslint-config-google": "^0.14.0",
+    "rimraf": "^4.1.1"
+  }
+}
