@@ -1,6 +1,6 @@
 {
   "name": "scoresaber.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A useful library for interacting with the ScoreSaber API.",
   "main": "build/main.js",
   "types": "build/main.d.ts",
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "prepublish": "npm run build"
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",

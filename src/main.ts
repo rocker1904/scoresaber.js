@@ -8,6 +8,17 @@ axiosRetry(Axios, {
     retries: 3,
 });
 
+export * from './types/AuthResponses';
+export * from './types/CountryData';
+export * from './types/Filter';
+export * from './types/GenericResponses';
+export * from './types/LeaderboardData';
+export * from './types/Live';
+export * from './types/PlayerData';
+export * from './types/Ranking';
+export * from './types/ScoreSaberTeam';
+export * from './types/UserData';
+
 export default class ScoreSaberAPI {
     private static SS_BASE_URL = 'https://scoresaber.com/api/';
     private static rateLimitRemaining = 400;
