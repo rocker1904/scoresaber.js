@@ -37,7 +37,6 @@ export default class ScoreSaberAPI {
             await new Promise(resolve => setTimeout(resolve, expiresInMillis));
         }
 
-
         // Make the request
         const response = await Axios.get(this.SS_BASE_URL + relativePath);
         this.rateLimitRemaining--;
@@ -99,8 +98,10 @@ export default class ScoreSaberAPI {
         return leaderboards;
     }
 
-    public static async fetchLeaderboardScores(leaderboardId: number, page = 1): Promise<ScoreCollection> {
-        const scoreCollection = await this.fetchPage(`leaderboard/by-id/${leaderboardId}/scores?page=${page}`) as ScoreCollection;
+    public static async fetchLeaderboardScores(leaderboardId: number, page = 1, region?: string): Promise<ScoreCollection> {
+        let requestPath = `leaderboard/by-id/${leaderboardId}/scores?page=${page}`;
+        if (region) requestPath += `&countries=${region}`;
+        const scoreCollection = await this.fetchPage(requestPath) as ScoreCollection;
         return scoreCollection;
     }
 

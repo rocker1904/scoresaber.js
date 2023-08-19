@@ -15,10 +15,10 @@ export interface LeaderboardInfo {
    levelAuthorName: string;
    difficulty: Difficulty;
    maxScore: number;
-   createdDate: Date;
-   rankedDate: Date;
-   qualifiedDate: Date;
-   lovedDate: Date;
+   createdDate: string;
+   rankedDate: string;
+   qualifiedDate: string;
+   lovedDate: string;
    ranked: boolean;
    qualified: boolean;
    loved: boolean;
@@ -63,7 +63,7 @@ export interface Score {
    maxCombo: number;
    fullCombo: boolean;
    hmd: number;
-   timeSet: Date;
+   timeSet: string;
 }
 
 export interface LeaderboardFilterOptions {

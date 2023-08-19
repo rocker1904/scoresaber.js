@@ -1,6 +1,6 @@
 {
   "name": "scoresaber.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A useful library for interacting with the ScoreSaber API.",
   "main": "build/main.js",
   "types": "build/main.d.ts",
