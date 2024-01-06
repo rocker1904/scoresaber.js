@@ -58,7 +58,8 @@ export default class ScoreSaberAPI {
         let request = `players?page=${pageNum}`;
         if (region) request += `&countries=${region}`;
         const playerCollection = await this.fetchPage(request) as PlayerCollection;
-        return playerCollection.players[rank % 50 - 1];
+        return (playerCollection.players[(rank -1)% 50])
+
     }
 
     public static async fetchPlayersUnderRank(rank: number, region?: string): Promise<Player[]> {
