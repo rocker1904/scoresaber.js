@@ -20,7 +20,7 @@ export * from './types/ScoreSaberTeam';
 export * from './types/UserData';
 
 export default class ScoreSaberAPI {
-    private static SS_BASE_URL = 'https://scoresaber.com/api/';
+    private static SS_BASE_URL = 'https://scoresaber.com/api/v1/';
     private static rateLimitRemaining = 400;
     private static rateLimitReset = -1; // Unix timestamp, initialised by the first request
 
