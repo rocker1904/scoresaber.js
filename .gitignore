@@ -105,3 +105,6 @@ dist
 
 # Output directory
 build/
+# Compiled test artifacts
+test/*.js
+test/*.d.ts
