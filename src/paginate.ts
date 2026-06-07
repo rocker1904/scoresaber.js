@@ -10,23 +10,34 @@ export interface PagedEnvelope<T> {
 }
 
 /**
- * Wraps a per-page fetcher in an async iterator. Stops when:
+ * Wraps a per-page fetcher in an async iterator over whole pages (envelope +
+ * metadata). Stops when:
  *   - metadata reports the current page is the last, OR
  *   - a page returns no items, OR
  *   - the consumer breaks out.
  */
-export async function* paginate<T>(
+export async function* pages<T>(
     fetchPage: (page: number) => Promise<PagedEnvelope<T>>,
     startPage = 1,
-): AsyncGenerator<T, void, undefined> {
+): AsyncGenerator<PagedEnvelope<T>, void, undefined> {
     let page = startPage;
     for (;;) {
         const envelope = await fetchPage(page);
-        for (const item of envelope.data) yield item;
+        yield envelope;
         if (envelope.data.length === 0) return;
         const meta = envelope.metadata;
         if (meta && page >= meta.totalPages) return;
         page++;
+    }
+}
+
+/** Same pagination, flattened to individual items. */
+export async function* paginate<T>(
+    fetchPage: (page: number) => Promise<PagedEnvelope<T>>,
+    startPage = 1,
+): AsyncGenerator<T, void, undefined> {
+    for await (const envelope of pages(fetchPage, startPage)) {
+        for (const item of envelope.data) yield item;
     }
 }
 
