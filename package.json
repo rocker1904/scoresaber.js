@@ -1,6 +1,6 @@
 {
     "name": "scoresaber.js",
-    "version": "0.4.0",
+    "version": "1.0.0",
     "description": "Typed Node.js client for the ScoreSaber v2 API.",
     "keywords": [
         "scoresaber",
