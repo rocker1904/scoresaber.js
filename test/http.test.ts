@@ -344,7 +344,14 @@ describe('Resilience', () => {
             fetch: (_input, init) => {
                 calls += 1;
                 return new Promise((_resolve, reject) => {
-                    init?.signal?.addEventListener('abort', () => reject(init.signal?.reason));
+                    // A real fetch keeps a live socket on the event loop; mimic that with a
+                    // ref'd timer so the client's (unref'd) AbortSignal.timeout can fire
+                    // instead of the loop draining first (flaky under some runners/Node versions).
+                    const keepAlive = setTimeout(() => undefined, 1000);
+                    init?.signal?.addEventListener('abort', () => {
+                        clearTimeout(keepAlive);
+                        reject(init.signal?.reason);
+                    });
                 });
             },
         });
