@@ -42,7 +42,7 @@ export interface HttpClientOpts {
     defaultQuery?: QueryRecord;
     /** Per-request timeout in milliseconds. */
     timeoutMs: number;
-    /** Retries on HTTP 429/5xx and transient network errors. */
+    /** Retries on 5xx and transient network errors (a `429` under `waitForRateLimit` is waited out separately). */
     maxRetries: number;
     /** Reject responses whose Content-Length exceeds this many bytes. */
     maxResponseBytes?: number;
@@ -55,6 +55,11 @@ const RETRY_CAP_MS = 10_000;
 // Upper bound for any server-suggested wait (Retry-After). Caps pathological /
 // hostile values so they can't overflow setTimeout's 32-bit range.
 const MAX_WAIT_MS = 24 * 60 * 60 * 1000;
+// Floor for a rate-limit wait. The 429 retry loop is unbounded under
+// `waitForRateLimit`; a server pinning `Retry-After: 0` (or a sub-ms bucket reset)
+// would otherwise make it hammer the API every macrotask. This keeps the worst case
+// to a sane rate while still effectively "retry promptly".
+const MIN_RATE_LIMIT_WAIT_MS = 50;
 
 /** Encodes a query record, dropping undefined / null / empty values. Arrays are comma-joined. */
 function buildQuery(params: QueryRecord): string {
@@ -136,6 +141,7 @@ export class HttpClient {
         // reuse the reservation rather than decrementing every bucket again.
         await this.opts.rateLimiter.checkin(req?.signal);
 
+        let transientRetries = 0; // governs 5xx / network retries — NOT rate-limit waits
         for (let attempt = 0; ; attempt++) {
             const timeoutSignal = AbortSignal.timeout(this.opts.timeoutMs);
             const signal = req?.signal ? AbortSignal.any([req.signal, timeoutSignal]) : timeoutSignal;
@@ -148,7 +154,8 @@ export class HttpClient {
             } catch (err) {
                 if (req?.signal?.aborted) throw req.signal.reason; // caller cancelled — don't mask it
                 if (timeoutSignal.aborted) throw new ScoreSaberTimeoutError(url, this.opts.timeoutMs, {cause: err});
-                if (attempt < this.opts.maxRetries) {
+                if (transientRetries < this.opts.maxRetries) {
+                    transientRetries++;
                     await sleep(jitteredBackoffMs(attempt), req?.signal);
                     if (req?.signal?.aborted) throw req.signal.reason ?? err;
                     continue;
@@ -169,23 +176,34 @@ export class HttpClient {
                 }
             }
 
-            const retryable = response.status === 429 || response.status >= 500;
-            if (retryable && attempt < this.opts.maxRetries && (response.status !== 429 || this.opts.rateLimiter.waitForRateLimit)) {
+            // A 429 under waitForRateLimit is waited out and retried without bound — the
+            // limit is transient and self-clearing, so it must not consume maxRetries.
+            // Wait the time the server (Retry-After) or the tracked buckets say is needed,
+            // falling back to backoff only when neither is known.
+            if (response.status === 429 && this.opts.rateLimiter.waitForRateLimit) {
                 await response.body?.cancel();
-                const waitMs =
-                    response.status === 429
-                        ? (parseRetryAfterMs(response.headers.get('retry-after')) ?? jitteredBackoffMs(attempt))
-                        : jitteredBackoffMs(attempt);
+                const suggested =
+                    parseRetryAfterMs(response.headers.get('retry-after')) ??
+                    (this.opts.rateLimiter.exhaustedWaitMs() || jitteredBackoffMs(attempt));
+                const waitMs = Math.max(MIN_RATE_LIMIT_WAIT_MS, suggested);
                 await sleep(waitMs, req?.signal);
                 if (req?.signal?.aborted) throw req.signal.reason;
                 continue;
             }
 
+            // Transient 5xx: bounded by maxRetries.
+            if (response.status >= 500 && transientRetries < this.opts.maxRetries) {
+                transientRetries++;
+                await response.body?.cancel();
+                await sleep(jitteredBackoffMs(attempt), req?.signal);
+                if (req?.signal?.aborted) throw req.signal.reason;
+                continue;
+            }
+
             if (!response.ok) {
-                // A 429 we're not going to retry (retries exhausted, or
-                // waitForRateLimit disabled) surfaces as RateLimitedError so
-                // callers have a single rate-limit type to catch, matching the
-                // proactive path in RateLimiter.checkin.
+                // A 429 reaching here means waitForRateLimit is off: surface it as
+                // RateLimitedError so callers have a single rate-limit type to catch,
+                // matching the proactive path in RateLimiter.checkin.
                 if (response.status === 429) {
                     const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'));
                     await response.body?.cancel();

@@ -20,7 +20,11 @@ export interface ScoreSaberClientOptions {
      * `client.realm(id)` — both keep the single shared rate-limit budget.
      */
     realmId?: number;
-    /** Block until the rate-limit window refreshes when a bucket is exhausted. Defaults to `true`. */
+    /**
+     * Block until the rate-limit window refreshes when a bucket is exhausted, and wait
+     * out a server `429` (until it clears) rather than throwing. Defaults to `true`.
+     * Set `false` to throw `RateLimitedError` instead of waiting.
+     */
     waitForRateLimit?: boolean;
     /** Inject a fetch implementation (testing, custom agents). Defaults to global `fetch`. */
     fetch?: FetchLike;
@@ -31,7 +35,10 @@ export interface ScoreSaberClientOptions {
      * backoff. To cancel a request that is waiting, pass a `signal`.
      */
     timeoutMs?: number;
-    /** Retries on HTTP 429/5xx and transient network errors. Defaults to `2`. */
+    /**
+     * Retries on 5xx and transient network errors. Defaults to `2`. A `429` under
+     * `waitForRateLimit` is waited out separately and is not bounded by this.
+     */
     maxRetries?: number;
     /** Override the default `User-Agent` header. */
     userAgent?: string;
