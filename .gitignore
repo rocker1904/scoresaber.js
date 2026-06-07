@@ -108,3 +108,10 @@ build/
 # Compiled test artifacts
 test/*.js
 test/*.d.ts
+
+# API Extractor working dir
+/temp/
+
+# Generated docs & coverage
+/docs/
+/coverage/
