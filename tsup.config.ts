@@ -8,7 +8,7 @@ export default defineConfig({
     format: ['esm', 'cjs'],
     dts: true,
     clean: true,
-    target: 'node20',
+    target: 'node22',
     outDir: 'build',
     sourcemap: true,
     // Inlined so the client can report its own version in the User-Agent without

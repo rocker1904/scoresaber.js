@@ -12,7 +12,7 @@ updates:
           # typescript-eslint) to support them first; adopt deliberately, not via bot.
           - dependency-name: 'typescript'
             update-types: ['version-update:semver-major']
-          # Track @types/node to the minimum supported Node (engines >=20.3), not the
+          # Track @types/node to the minimum supported Node (engines >=22), not the
           # latest, so APIs newer than the floor don't silently type-check.
           - dependency-name: '@types/node'
             update-types: ['version-update:semver-major']

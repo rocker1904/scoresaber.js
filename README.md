@@ -9,7 +9,7 @@ Typed Node.js client for the [ScoreSaber v2 API](https://scoresaber.com/api/docs
 - Ships ESM **and** CommonJS; native `fetch`, zero runtime dependencies
 - Typed error hierarchy under `ScoreSaberError` so consumers can catch broadly or by code
 
-Requires Node.js 20.3 or newer (for `AbortSignal.any`).
+Requires Node.js 22 or newer.
 
 ## Install
 
