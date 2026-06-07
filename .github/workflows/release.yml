@@ -4,9 +4,6 @@ on:
     push:
         branches: [main]
 
-# Cancel superseded release runs.
-concurrency: release
-
 permissions: {}
 
 jobs:
@@ -14,6 +11,10 @@ jobs:
     # contributor merges flow freely; this job never publishes.
     version:
         runs-on: ubuntu-latest
+        # Serialise Version-PR upkeep; a newer push supersedes an in-flight run.
+        concurrency:
+            group: release-version
+            cancel-in-progress: true
         permissions:
             contents: write # update the "Version Packages" PR / tags
             pull-requests: write # open that PR
@@ -31,13 +32,14 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             # Publish only when package.json is ahead of the registry (i.e. the
             # Version Packages PR just merged), so the approval gate doesn't fire
-            # on ordinary pushes.
+            # on ordinary pushes. A failed registry lookup is treated as "nothing
+            # to do" so a hiccup can't spawn a spurious approval-waiting publish.
             - id: check
               run: |
                   local=$(node -p "require('./package.json').version")
-                  remote=$(npm view scoresaber.js version 2>/dev/null || echo none)
-                  echo "local=$local remote=$remote"
-                  if [ "$local" != "$remote" ]; then
+                  remote=$(npm view scoresaber.js version 2>/dev/null) || remote=""
+                  echo "local=$local remote=${remote:-<lookup failed>}"
+                  if [ -n "$remote" ] && [ "$local" != "$remote" ]; then
                       echo "shouldPublish=true" >> "$GITHUB_OUTPUT"
                   else
                       echo "shouldPublish=false" >> "$GITHUB_OUTPUT"
@@ -52,6 +54,12 @@ jobs:
         if: needs.version.outputs.shouldPublish == 'true'
         runs-on: ubuntu-latest
         environment: NPM
+        # Only genuine publishes enter this group (unintended pushes skip this job
+        # via the `if`), so an approval-waiting publish is never cancelled by an
+        # unrelated push's Release run.
+        concurrency:
+            group: release-publish
+            cancel-in-progress: false
         permissions:
             contents: write # changesets/action pushes the release tag
             id-token: write # OIDC for npm trusted publishing
