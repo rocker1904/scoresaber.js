@@ -1,0 +1,6 @@
+{
+    "include": ["src/**"],
+    "exclude": ["src/generated/**"],
+    "reporter": ["text-summary", "lcov"],
+    "all": true
+}

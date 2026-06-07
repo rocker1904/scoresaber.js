@@ -1,0 +1,7 @@
+build/
+coverage/
+src/generated/
+spec/openapi.json
+package-lock.json
+CHANGELOG.md
+etc/
