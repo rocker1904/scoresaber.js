@@ -4,7 +4,7 @@ Typed Node.js client for the [ScoreSaber v2 API](https://scoresaber.com/api/docs
 
 - Response types generated from the live OpenAPI spec — re-runnable via `npm run gen:types`
 - Best-effort tracking of the three tiered rate-limit buckets (`long`/`medium`/`short`) with auto-wait when exhausted (opt-out for fail-fast)
-- Resilient by default: per-request timeout, and retries on HTTP 429/5xx and transient network errors with backoff
+- Resilient by default: per-request timeout, waits out rate limits, and retries 5xx / transient network errors with backoff
 - Lazy pagination via `AsyncIterable` — consumers control how much to fetch
 - Ships ESM **and** CommonJS; native `fetch`, zero runtime dependencies
 - Typed error hierarchy under `ScoreSaberError` so consumers can catch broadly or by code
@@ -56,7 +56,7 @@ new ScoreSaberClient({
     realmId?: number,            // applied to every request; default = active realm
     waitForRateLimit?: boolean,  // default true; false = throw RateLimitedError
     timeoutMs?: number,          // default 30000; per network attempt (not rate-limit waits)
-    maxRetries?: number,         // default 2; retries 429/5xx/network errors
+    maxRetries?: number,         // default 2; retries 5xx/network errors (429s are waited out, see below)
     userAgent?: string,          // override the default User-Agent
     maxResponseBytes?: number,   // reject responses larger than this
     onRequest?: (ctx) => void,   // hook: before each request attempt
@@ -132,11 +132,11 @@ Boolean-style filter params (e.g. `verified`, `hideNA`, `includePlayerScore`) ar
 
 ## Rate limit handling
 
-The client reads `x-ratelimit-remaining-{long,medium,short}` and `x-ratelimit-reset-{long,medium,short}` from each response and tracks every bucket independently, reserving capacity before each request so concurrent calls can't oversubscribe a bucket. When `waitForRateLimit: true` (default), it sleeps until the most-constrained bucket resets, and retries (up to `maxRetries`) if the API still returns HTTP 429 — honouring `Retry-After`. Set `waitForRateLimit: false` to throw `RateLimitedError` instead.
+The client reads `x-ratelimit-remaining-{long,medium,short}` and `x-ratelimit-reset-{long,medium,short}` from each response and tracks every bucket as monotonic per-window usage, reserving capacity before each request so concurrent calls can't oversubscribe a bucket (a later response's rosier count can't erase an in-flight reservation). When `waitForRateLimit: true` (default), it sleeps until the most-constrained bucket resets; and if the API still returns HTTP 429 it keeps waiting it out — honouring `Retry-After`, else the tracked bucket reset — until it clears, **not** bounded by `maxRetries` (`maxRetries` governs only 5xx/network). Cancel a wait via the call's `signal`. Set `waitForRateLimit: false` to throw `RateLimitedError` instead.
 
-`RateLimitedError` is the single type for both cases: a proactive throw (a tracked bucket is exhausted; `bucket` is set) and a server 429 the client won't retry (`status` is `429` and `url` is set; `bucket` is `undefined`). Either way `resetAt` tells you when to try again (`0` if unknown).
+`RateLimitedError` is only thrown when `waitForRateLimit: false`, and covers both cases: a proactive throw (a tracked bucket is exhausted; `bucket` is set) and a server 429 (`status` is `429` and `url` is set; `bucket` is `undefined`). Either way `resetAt` tells you when to try again (`0` if unknown).
 
-> These rate-limit header names are not part of the published OpenAPI spec; the limiter treats them as best-effort. If a header is absent or unrecognised, the corresponding bucket stays unbounded (no gating) rather than guessing. The opt-in integration suite verifies the contract against the live API.
+> These rate-limit header names are not part of the published OpenAPI spec; the limiter treats them as best-effort. Until the first response is seen — and whenever a header is absent or unrecognised — the corresponding bucket keeps a conservative default ceiling (gating from the first request) rather than going unbounded; the authoritative `x-ratelimit-limit-*` value replaces it once seen. The opt-in integration suite verifies the contract against the live API.
 
 A rate-limit wait isn't bounded by `timeoutMs` (that's per network attempt) — it ends when the window resets or when you abort the call's `signal`, whichever comes first.
 

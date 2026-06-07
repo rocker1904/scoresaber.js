@@ -44,14 +44,15 @@ describe('live API smoke', {skip: !ENABLED}, () => {
 
     test('rate-limit headers are surfaced on the client after a request', async () => {
         await client.players.getBasic(FIXTURE_PLAYER_ID);
-        // This is also a contract check: if the x-ratelimit-* header names or
-        // units ever drift from what rate-limit.ts assumes, the bucket stays at
-        // Infinity and these assertions fail loudly.
+        // Contract check: `resetAt` is only ever set by parsing `x-ratelimit-reset-*`,
+        // so if those header names or units drift from what rate-limit.ts assumes it
+        // stays 0 and this fails loudly. (`remaining` can't serve as the signal — a
+        // checkin's own reservation lowers it below the default ceiling even with no
+        // headers, so it no longer distinguishes "parsed" from "unparsed".)
         assert.ok(
-            client.rateLimit.long.remaining < 400,
-            `long bucket still unbounded — the x-ratelimit-* header contract may have changed (got ${client.rateLimit.long.remaining})`,
+            client.rateLimit.long.resetAt > Date.now(),
+            `long bucket reset not surfaced from headers — the x-ratelimit-* contract may have changed (resetAt=${client.rateLimit.long.resetAt})`,
         );
-        assert.ok(client.rateLimit.long.resetAt > Date.now());
     });
 
     test('server honours leaderboard filters (regression guard for dropped query params)', async () => {

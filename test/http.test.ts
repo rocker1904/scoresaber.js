@@ -124,26 +124,67 @@ describe('HTTP layer', () => {
         assert.equal(p.id, '1');
     });
 
-    test('stops retrying 429 once maxRetries is exhausted and throws RateLimitedError', async () => {
+    test('waitForRateLimit retries a 429 past maxRetries until it clears', async () => {
         let calls = 0;
-        const {client} = mockedClient(
-            () => {
-                calls += 1;
-                return jsonResponse({code: 'TOO_MANY_REQUESTS', message: 'slow down'}, {status: 429, headers: {'retry-after': '0'}});
-            },
-            {maxRetries: 1},
+        const {client} = mockedClient(() => {
+            calls += 1;
+            if (calls <= 3) {
+                // 429 with a ~10ms bucket reset and no Retry-After: it waits out the
+                // tracked reset (exhaustedWaitMs) and retries — fast, but a real wait.
+                return jsonResponse(
+                    {code: 'TOO_MANY_REQUESTS'},
+                    {status: 429, headers: {'x-ratelimit-remaining-short': '0', 'x-ratelimit-reset-short': '0.01'}},
+                );
+            }
+            return jsonResponse({id: '1', name: 'x'});
+        }); // default maxRetries = 2
+        const p = await client.players.getBasic('1');
+        assert.equal(p.id, '1');
+        assert.equal(calls, 4); // 3 x 429 then success — more than maxRetries, and it never threw
+    });
+
+    test('a 429 wait is cancellable via the caller signal', async () => {
+        const controller = new AbortController();
+        const {client} = mockedClient(() =>
+            // 429 with a 10s reset and no Retry-After: without abort this would block ~10s.
+            jsonResponse(
+                {code: 'TOO_MANY_REQUESTS'},
+                {status: 429, headers: {'x-ratelimit-remaining-short': '0', 'x-ratelimit-reset-short': '10'}},
+            ),
         );
+        const reason = new Error('cancelled');
+        setTimeout(() => controller.abort(reason), 20);
         await assert.rejects(
-            () => client.players.getBasic('1'),
-            (err: unknown) => {
-                assert.ok(err instanceof RateLimitedError);
-                assert.equal(err.status, 429);
-                assert.equal(err.bucket, undefined); // server 429 doesn't name a bucket
-                assert.match(err.url ?? '', /\/players\/1\/basic$/);
-                return true;
-            },
+            () => client.players.getBasic('1', {signal: controller.signal}),
+            (e: unknown) => e === reason,
         );
-        assert.equal(calls, 2); // initial + 1 retry
+    });
+
+    test('a 429 with Retry-After: 0 still waits a small floor between retries (no hot loop)', async () => {
+        let calls = 0;
+        const {client} = mockedClient(() => {
+            calls += 1;
+            if (calls <= 2) return jsonResponse({code: 'TOO_MANY_REQUESTS'}, {status: 429, headers: {'retry-after': '0'}});
+            return jsonResponse({id: '1', name: 'x'});
+        });
+        const before = Date.now();
+        const p = await client.players.getBasic('1');
+        const elapsed = Date.now() - before;
+        assert.equal(p.id, '1');
+        assert.equal(calls, 3);
+        assert.ok(elapsed >= 80, `expected a wait floor between retries (~2x50ms), only ${elapsed}ms`);
+    });
+
+    test('a bare 429 (no rate-limit headers) is waited out via backoff, not hung or thrown', async () => {
+        let calls = 0;
+        const {client} = mockedClient(() => {
+            calls += 1;
+            if (calls <= 2) return jsonResponse({code: 'TOO_MANY_REQUESTS'}, {status: 429}); // no retry-after, no bucket headers
+            return jsonResponse({id: '1', name: 'x'});
+        });
+        const p = await client.players.getBasic('1');
+        assert.equal(p.id, '1');
+        assert.equal(calls, 3); // fell back to jittered backoff and retried until success
     });
 
     test('a 429 surfaces as RateLimitedError (not ScoreSaberAPIError) when waitForRateLimit is off', async () => {

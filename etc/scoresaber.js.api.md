@@ -14,8 +14,10 @@ export type BucketName = 'long' | 'medium' | 'short';
 
 // @public
 export interface BucketState {
+    limit: number;
     remaining: number;
     resetAt: number;
+    used: number;
 }
 
 // @public
@@ -2499,7 +2501,7 @@ export type ScoreStats = GetResponse<'/api/v2/scores/{id}/stats'>;
 
 // Warnings were encountered during analysis:
 //
-// build/index.d.ts:134:9 - (ae-forgotten-export) The symbol "operations" needs to be exported by the entry point index.d.ts
+// build/index.d.ts:162:9 - (ae-forgotten-export) The symbol "operations" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 
