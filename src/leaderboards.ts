@@ -1,91 +1,98 @@
-import type {HttpClient} from './http';
+import type {HttpClient, RequestOptions} from './http';
 import {paginate} from './paginate';
 import type {
-    LeaderboardInfo, LeaderboardInfoCollection,
-    LeaderboardScoreCollection, LeaderboardScore,
-    LeaderboardByHashResponse, LeaderboardByHashDifficulty,
+    LeaderboardInfo,
+    LeaderboardListing,
+    LeaderboardInfoCollection,
+    LeaderboardScoreCollection,
+    LeaderboardScore,
+    LeaderboardByHashResponse,
+    LeaderboardByHashDifficulty,
+    LeaderboardsListQuery,
+    LeaderboardScoresQuery,
+    LeaderboardScoresByHashQuery,
 } from './types';
 
-export interface LeaderboardsListOpts {
-    page?: number;
-    limit?: number;
-    ranked?: boolean;
-    qualified?: boolean;
-    loved?: boolean;
-    minStar?: number;
-    maxStar?: number;
-    category?: number;
-    sort?: string;
-    sortDirection?: 'asc' | 'desc';
-    search?: string;
-}
-
-export interface LeaderboardScoresOpts {
-    page?: number;
-    limit?: number;
-    countries?: string;
-    scope?: 'country' | 'friends' | 'global';
-    search?: string;
-    sort?: string;
-    sortDirection?: 'asc' | 'desc';
-    hideNA?: boolean;
-}
-
+/** Leaderboards: listings, scores, and lookup by map hash. */
 export class LeaderboardsResource {
+    /** @internal */
     constructor(private readonly http: HttpClient) {}
 
     /** Single leaderboard's metadata + map info. */
-    public get(leaderboardId: number): Promise<LeaderboardInfo> {
-        return this.http.get<LeaderboardInfo>(`leaderboards/${leaderboardId}`);
+    public get(leaderboardId: number, req?: RequestOptions): Promise<LeaderboardInfo> {
+        return this.http.get<LeaderboardInfo>(`leaderboards/${leaderboardId}`, {}, req);
     }
 
-    public listPage(opts: LeaderboardsListOpts = {}): Promise<LeaderboardInfoCollection> {
-        return this.http.get<LeaderboardInfoCollection>('leaderboards', opts);
+    /** Single page of the leaderboard listings. */
+    public listPage(opts: LeaderboardsListQuery = {}, req?: RequestOptions): Promise<LeaderboardInfoCollection> {
+        return this.http.get<LeaderboardInfoCollection>('leaderboards', opts, req);
     }
 
-    public list(opts: Omit<LeaderboardsListOpts, 'page'> = {}): AsyncIterable<LeaderboardInfo> {
-        return paginate<LeaderboardInfo>(async (page) => {
-            const env = await this.listPage({...opts, page});
-            return {data: env.data as LeaderboardInfo[], metadata: env.metadata};
+    /** AsyncIterable over the leaderboard listings — paginates lazily. */
+    public list(opts: Omit<LeaderboardsListQuery, 'page'> = {}, req?: RequestOptions): AsyncIterable<LeaderboardListing> {
+        return paginate<LeaderboardListing>(async (page) => {
+            const env = await this.listPage({...opts, page}, req);
+            return {data: env.data, metadata: env.metadata};
         });
     }
 
-    public scoresPage(leaderboardId: number, opts: LeaderboardScoresOpts = {}): Promise<LeaderboardScoreCollection> {
-        return this.http.get<LeaderboardScoreCollection>(`leaderboards/${leaderboardId}/scores`, opts);
+    /** Single page of a leaderboard's scores. */
+    public scoresPage(leaderboardId: number, opts: LeaderboardScoresQuery = {}, req?: RequestOptions): Promise<LeaderboardScoreCollection> {
+        return this.http.get<LeaderboardScoreCollection>(`leaderboards/${leaderboardId}/scores`, opts, req);
     }
 
-    public scores(leaderboardId: number, opts: Omit<LeaderboardScoresOpts, 'page'> = {}): AsyncIterable<LeaderboardScore> {
+    /** AsyncIterable over a leaderboard's scores — paginates lazily. */
+    public scores(
+        leaderboardId: number,
+        opts: Omit<LeaderboardScoresQuery, 'page'> = {},
+        req?: RequestOptions,
+    ): AsyncIterable<LeaderboardScore> {
         return paginate<LeaderboardScore>(async (page) => {
-            const env = await this.scoresPage(leaderboardId, {...opts, page});
-            return {data: env.data as LeaderboardScore[], metadata: env.metadata};
+            const env = await this.scoresPage(leaderboardId, {...opts, page}, req);
+            return {data: env.data, metadata: env.metadata};
         });
     }
 
     /** All difficulties available for a map identified by hash. */
-    public byHash(hash: string): Promise<LeaderboardByHashResponse> {
-        return this.http.get<LeaderboardByHashResponse>(`leaderboards/hash/${encodeURIComponent(hash)}`);
+    public byHash(hash: string, req?: RequestOptions): Promise<LeaderboardByHashResponse> {
+        return this.http.get<LeaderboardByHashResponse>(`leaderboards/hash/${encodeURIComponent(hash)}`, {}, req);
     }
 
     /** Single difficulty of a map identified by hash + mode + difficulty. */
-    public byHashDifficulty(hash: string, mode: string, difficulty: string): Promise<LeaderboardByHashDifficulty> {
+    public byHashDifficulty(hash: string, mode: string, difficulty: string, req?: RequestOptions): Promise<LeaderboardByHashDifficulty> {
         return this.http.get<LeaderboardByHashDifficulty>(
             `leaderboards/hash/${encodeURIComponent(hash)}/${encodeURIComponent(mode)}/${encodeURIComponent(difficulty)}`,
+            {},
+            req,
         );
     }
 
     /** Scores for a specific difficulty of a hashed map. */
-    public scoresPageByHash(hash: string, mode: string, difficulty: string, opts: LeaderboardScoresOpts = {}): Promise<LeaderboardScoreCollection> {
+    public scoresPageByHash(
+        hash: string,
+        mode: string,
+        difficulty: string,
+        opts: LeaderboardScoresByHashQuery = {},
+        req?: RequestOptions,
+    ): Promise<LeaderboardScoreCollection> {
         return this.http.get<LeaderboardScoreCollection>(
             `leaderboards/hash/${encodeURIComponent(hash)}/${encodeURIComponent(mode)}/${encodeURIComponent(difficulty)}/scores`,
             opts,
+            req,
         );
     }
 
     /** AsyncIterable over scores for a hashed-map difficulty. */
-    public scoresByHash(hash: string, mode: string, difficulty: string, opts: Omit<LeaderboardScoresOpts, 'page'> = {}): AsyncIterable<LeaderboardScore> {
+    public scoresByHash(
+        hash: string,
+        mode: string,
+        difficulty: string,
+        opts: Omit<LeaderboardScoresByHashQuery, 'page'> = {},
+        req?: RequestOptions,
+    ): AsyncIterable<LeaderboardScore> {
         return paginate<LeaderboardScore>(async (page) => {
-            const env = await this.scoresPageByHash(hash, mode, difficulty, {...opts, page});
-            return {data: env.data as LeaderboardScore[], metadata: env.metadata};
+            const env = await this.scoresPageByHash(hash, mode, difficulty, {...opts, page}, req);
+            return {data: env.data, metadata: env.metadata};
         });
     }
 }

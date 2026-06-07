@@ -1,32 +1,27 @@
-import type {HttpClient} from './http';
+import type {HttpClient, RequestOptions} from './http';
 import {paginate} from './paginate';
-import type {MapCollection, MapInfo} from './types';
+import type {MapCollection, MapInfo, MapListing, MapsListQuery} from './types';
 
-export interface MapsListOpts {
-    page?: number;
-    limit?: number;
-    search?: string;
-    sort?: string;
-    sortDirection?: 'asc' | 'desc';
-}
-
-type MapItem = MapCollection extends {data: ReadonlyArray<infer I>} ? I : never;
-
+/** Map listings and individual maps. */
 export class MapsResource {
+    /** @internal */
     constructor(private readonly http: HttpClient) {}
 
-    public listPage(opts: MapsListOpts = {}): Promise<MapCollection> {
-        return this.http.get<MapCollection>('maps', opts);
+    /** Single page of the map listings. */
+    public listPage(opts: MapsListQuery = {}, req?: RequestOptions): Promise<MapCollection> {
+        return this.http.get<MapCollection>('maps', opts, req);
     }
 
-    public list(opts: Omit<MapsListOpts, 'page'> = {}): AsyncIterable<MapItem> {
-        return paginate<MapItem>(async (page) => {
-            const env = await this.listPage({...opts, page});
-            return {data: env.data as MapItem[], metadata: env.metadata};
+    /** AsyncIterable over the map listings — paginates lazily. */
+    public list(opts: Omit<MapsListQuery, 'page'> = {}, req?: RequestOptions): AsyncIterable<MapListing> {
+        return paginate<MapListing>(async (page) => {
+            const env = await this.listPage({...opts, page}, req);
+            return {data: env.data, metadata: env.metadata};
         });
     }
 
-    public get(mapId: number): Promise<MapInfo> {
-        return this.http.get<MapInfo>(`maps/${mapId}`);
+    /** Single map by id. */
+    public get(mapId: number, req?: RequestOptions): Promise<MapInfo> {
+        return this.http.get<MapInfo>(`maps/${mapId}`, {}, req);
     }
 }
