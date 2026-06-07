@@ -27,23 +27,31 @@ jobs:
                   node-version: '22'
                   cache: 'npm'
             - run: npm ci
-            - uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            # Publish only when package.json is ahead of the registry (i.e. the
-            # Version Packages PR just merged), so the approval gate doesn't fire
-            # on ordinary pushes. A failed registry lookup is treated as "nothing
-            # to do" so a hiccup can't spawn a spurious approval-waiting publish.
+            # Decide BEFORE changesets/action runs: that step leaves the working tree
+            # on the version-bumped changeset-release branch, so reading package.json
+            # afterwards reports the *next* version and would mis-fire the publish gate.
             - id: check
               run: |
                   local=$(node -p "require('./package.json').version")
                   remote=$(npm view scoresaber.js version 2>/dev/null) || remote=""
                   echo "local=$local remote=${remote:-<lookup failed>}"
+                  # Publish only when main's committed version is ahead of the registry
+                  # (i.e. the Version Packages PR just merged). A failed lookup => no-op.
                   if [ -n "$remote" ] && [ "$local" != "$remote" ]; then
                       echo "shouldPublish=true" >> "$GITHUB_OUTPUT"
                   else
                       echo "shouldPublish=false" >> "$GITHUB_OUTPUT"
                   fi
+                  # The version the pending changesets would produce, for the PR/commit name.
+                  npx changeset status --output=/tmp/changeset-status.json >/dev/null 2>&1 || true
+                  next=$(node -e "try{const r=require('/tmp/changeset-status.json').releases.find(p=>p.name==='scoresaber.js');process.stdout.write((r&&r.newVersion)?r.newVersion:'')}catch{process.stdout.write('')}")
+                  echo "nextVersion=$next" >> "$GITHUB_OUTPUT"
+            - uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
+              with:
+                  title: ${{ steps.check.outputs.nextVersion && format('Version Packages v{0}', steps.check.outputs.nextVersion) || 'Version Packages' }}
+                  commit: ${{ steps.check.outputs.nextVersion && format('Version Packages v{0}', steps.check.outputs.nextVersion) || 'Version Packages' }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Publishes to npm via OIDC trusted publishing. Runs in the `NPM` environment,
     # so a maintainer must approve each publish (set required reviewers on that
