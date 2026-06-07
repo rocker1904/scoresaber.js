@@ -1,0 +1,19 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": [
+        "src/index.ts",
+        "src/players.ts",
+        "src/leaderboards.ts",
+        "src/scores.ts",
+        "src/maps.ts",
+        "src/realms.ts",
+        "src/ranking-queue.ts"
+    ],
+    "out": "docs",
+    "tsconfig": "tsconfig.json",
+    "excludeInternal": true,
+    "exclude": ["src/generated/**", "test/**"],
+    "intentionallyNotExported": ["GetResponse", "ItemOf", "Unwrap", "QueryOf"],
+    "treatWarningsAsErrors": true,
+    "categorizeByGroup": true
+}
