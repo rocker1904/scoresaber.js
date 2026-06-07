@@ -10,12 +10,51 @@ concurrency: release
 permissions: {}
 
 jobs:
-    release:
+    # Maintains the "Version Packages" PR from accumulated changesets. Ungated so
+    # contributor merges flow freely; this job never publishes.
+    version:
         runs-on: ubuntu-latest
         permissions:
-            contents: write # create the "Version Packages" PR / tags
+            contents: write # update the "Version Packages" PR / tags
             pull-requests: write # open that PR
-            id-token: write # npm publish provenance
+        outputs:
+            shouldPublish: ${{ steps.check.outputs.shouldPublish }}
+        steps:
+            - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+            - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+              with:
+                  node-version: '20'
+                  cache: 'npm'
+            - run: npm ci
+            - uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            # Publish only when package.json is ahead of the registry (i.e. the
+            # Version Packages PR just merged), so the approval gate doesn't fire
+            # on ordinary pushes.
+            - id: check
+              run: |
+                  local=$(node -p "require('./package.json').version")
+                  remote=$(npm view scoresaber.js version 2>/dev/null || echo none)
+                  echo "local=$local remote=$remote"
+                  if [ "$local" != "$remote" ]; then
+                      echo "shouldPublish=true" >> "$GITHUB_OUTPUT"
+                  else
+                      echo "shouldPublish=false" >> "$GITHUB_OUTPUT"
+                  fi
+
+    # Publishes to npm via OIDC trusted publishing. Runs in the `NPM` environment,
+    # so a maintainer must approve each publish (set required reviewers on that
+    # environment). No NPM_TOKEN — npm mints a short-lived credential and attaches
+    # provenance automatically.
+    publish:
+        needs: version
+        if: needs.version.outputs.shouldPublish == 'true'
+        runs-on: ubuntu-latest
+        environment: NPM
+        permissions:
+            contents: write # changesets/action pushes the release tag
+            id-token: write # OIDC for npm trusted publishing
         steps:
             - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
             - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
@@ -23,13 +62,11 @@ jobs:
                   node-version: '20'
                   cache: 'npm'
                   registry-url: 'https://registry.npmjs.org'
+            # Trusted publishing (OIDC) needs npm >= 11.5.1; Node 20 ships npm 10.
+            - run: npm install -g npm@11
             - run: npm ci
-            # Maintains a "Version Packages" PR from accumulated changesets; when
-            # that PR merges (versions bumped), publishes to npm with provenance.
             - uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
               with:
                   publish: npm run release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NPM_CONFIG_PROVENANCE: 'true'
