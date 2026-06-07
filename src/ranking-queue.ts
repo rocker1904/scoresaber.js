@@ -1,28 +1,27 @@
-import type {HttpClient} from './http';
+import type {HttpClient, RequestOptions} from './http';
 import {paginate} from './paginate';
-import type {RankingRequestCollection, RankingRequest, RankingRequestDetail} from './types';
+import type {RankingRequestCollection, RankingRequest, RankingRequestDetail, RankingQueueQuery} from './types';
 
-export interface RankingQueueOpts {
-    page?: number;
-    limit?: number;
-}
-
+/** The ranked-map request queue. */
 export class RankingQueueResource {
+    /** @internal */
     constructor(private readonly http: HttpClient) {}
 
-    public listPage(opts: RankingQueueOpts = {}): Promise<RankingRequestCollection> {
-        return this.http.get<RankingRequestCollection>('ranking/requests', opts);
+    /** Single page of the ranking queue. */
+    public listPage(opts: RankingQueueQuery = {}, req?: RequestOptions): Promise<RankingRequestCollection> {
+        return this.http.get<RankingRequestCollection>('ranking/requests', opts, req);
     }
 
-    public list(opts: Omit<RankingQueueOpts, 'page'> = {}): AsyncIterable<RankingRequest> {
+    /** AsyncIterable over the ranking queue — paginates lazily. */
+    public list(opts: Omit<RankingQueueQuery, 'page'> = {}, req?: RequestOptions): AsyncIterable<RankingRequest> {
         return paginate<RankingRequest>(async (page) => {
-            const env = await this.listPage({...opts, page});
-            return {data: env.data as RankingRequest[], metadata: env.metadata};
+            const env = await this.listPage({...opts, page}, req);
+            return {data: env.data, metadata: env.metadata};
         });
     }
 
     /** Single ranking request by id (includes replacement chain fields). */
-    public get(requestId: number): Promise<RankingRequestDetail> {
-        return this.http.get<RankingRequestDetail>(`ranking/requests/${requestId}`);
+    public get(requestId: number, req?: RequestOptions): Promise<RankingRequestDetail> {
+        return this.http.get<RankingRequestDetail>(`ranking/requests/${requestId}`, {}, req);
     }
 }
