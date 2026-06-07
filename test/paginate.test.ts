@@ -1,6 +1,6 @@
 import {strict as assert} from 'node:assert';
 import {test, describe} from 'node:test';
-import {paginate, collect} from '../src/paginate';
+import {paginate, pages, collect} from '../src/paginate';
 
 describe('paginate', () => {
     test('stops at totalPages from metadata', async () => {
@@ -46,11 +46,32 @@ describe('paginate', () => {
     });
 
     test('collect respects optional limit', async () => {
-        const it = paginate<number>((page) => Promise.resolve({
-            data: [page, page + 0.5],
-            metadata: {page, itemsPerPage: 2, totalItems: 1000, totalPages: 500},
-        }));
+        const it = paginate<number>((page) =>
+            Promise.resolve({
+                data: [page, page + 0.5],
+                metadata: {page, itemsPerPage: 2, totalItems: 1000, totalPages: 500},
+            }),
+        );
         const first4 = await collect(it, 4);
         assert.deepEqual(first4, [1, 1.5, 2, 2.5]);
+    });
+});
+
+describe('pages', () => {
+    test('yields whole envelopes with metadata and stops at the last page', async () => {
+        const seen: number[] = [];
+        const it = pages<number>((page) => {
+            seen.push(page);
+            return Promise.resolve({
+                data: [page * 10],
+                metadata: {page, itemsPerPage: 1, totalItems: 2, totalPages: 2},
+            });
+        });
+        const envelopes = [];
+        for await (const env of it) envelopes.push(env);
+        assert.deepEqual(seen, [1, 2]);
+        assert.equal(envelopes.length, 2);
+        assert.deepEqual(envelopes[0].data, [10]);
+        assert.equal(envelopes[1].metadata?.totalPages, 2);
     });
 });
