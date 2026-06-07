@@ -1,0 +1,35 @@
+name: Release
+
+on:
+    push:
+        branches: [main]
+
+# Cancel superseded release runs.
+concurrency: release
+
+permissions: {}
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write # create the "Version Packages" PR / tags
+            pull-requests: write # open that PR
+            id-token: write # npm publish provenance
+        steps:
+            - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+            - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+              with:
+                  node-version: '20'
+                  cache: 'npm'
+                  registry-url: 'https://registry.npmjs.org'
+            - run: npm ci
+            # Maintains a "Version Packages" PR from accumulated changesets; when
+            # that PR merges (versions bumped), publishes to npm with provenance.
+            - uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
+              with:
+                  publish: npm run release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  NPM_CONFIG_PROVENANCE: 'true'

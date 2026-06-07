@@ -1,0 +1,49 @@
+name: Spec sync
+
+on:
+    schedule:
+        - cron: '0 6 * * 1' # Mondays 06:00 UTC
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pull-requests: write
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+            - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+              with:
+                  node-version: '20'
+                  cache: 'npm'
+            - run: npm ci
+            # Refresh spec -> regenerate types -> refresh the public API report.
+            # If fetch-spec can't extract the spec it exits non-zero and the job
+            # fails loudly (rather than committing a broken spec).
+            - run: npm run fetch-spec
+            - run: npm run gen:types
+            - run: npm run api:update
+            - run: npm run format
+            # Gate the regenerated output. PRs opened with the default GITHUB_TOKEN
+            # don't trigger CI, so we run the same checks here — a spec change that
+            # breaks typing or the path contracts fails this job instead of landing
+            # as a green-looking PR. Offline suite only; the live integration tests
+            # stay gated behind SCORESABER_INTEGRATION.
+            - run: npm run lint
+            - run: npm run typecheck
+            - run: npm test
+            # Opens a PR only when something actually changed. The etc/*.api.md
+            # diff shows the exact public-API delta, so the reviewer can pick the
+            # right changeset bump (additive -> minor, removed/changed -> major).
+            - uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+              with:
+                  branch: spec-sync
+                  title: 'chore: sync ScoreSaber API spec'
+                  commit-message: 'chore: sync ScoreSaber API spec'
+                  body: |
+                      Automated spec sync. Review the `etc/scoresaber.js.api.md` diff
+                      to gauge the public-API impact, then add a changeset with the
+                      appropriate bump before merging.
+                  labels: spec-sync
