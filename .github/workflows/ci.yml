@@ -10,6 +10,7 @@ permissions:
 
 jobs:
     build-and-test:
+        name: Build & test (Node ${{ matrix.node }})
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
@@ -21,19 +22,27 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
                   cache: 'npm'
-            - run: npm ci
-            - run: npm run lint
-            - run: npm run format:check
-            - run: npm run typecheck
-            - run: npm run build
-            - run: npm run smoke
-            - run: npm run api:check
-            - run: npm run docs
-            - run: npm run test:coverage
+            - name: Install dependencies
+              run: npm ci
+            - name: Lint
+              run: npm run lint
+            - name: Check formatting
+              run: npm run format:check
+            - name: Typecheck
+              run: npm run typecheck
+            - name: Build (ESM + CJS + d.ts)
+              run: npm run build
+            - name: Smoke-test the published exports
+              run: npm run smoke
+            - name: Check the API report is up to date
+              run: npm run api:check
+            - name: Build the docs
+              run: npm run docs
+            - name: Run tests with coverage
+              run: npm run test:coverage
 
-    # Hits the live ScoreSaber API, so it only runs on pull requests (this repo can
-    # sit untouched for months — a scheduled run would just burn rate-limit budget).
     integration:
+        name: Integration (live ScoreSaber API)
         if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         timeout-minutes: 10 # don't hang a PR if the live API is slow/unreachable
@@ -43,7 +52,9 @@ jobs:
               with:
                   node-version: '22'
                   cache: 'npm'
-            - run: npm ci
-            - run: npm test
+            - name: Install dependencies
+              run: npm ci
+            - name: Run the test suite against the live API
+              run: npm test
               env:
                   SCORESABER_INTEGRATION: '1'
