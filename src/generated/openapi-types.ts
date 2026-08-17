@@ -4,22 +4,6 @@
  */
 
 export interface paths {
-    "/api/v2": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RootController_getData_v2"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/v2/health": {
         parameters: {
             query?: never;
@@ -27,7 +11,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["HealthController_getHealth_v2"];
+        get: operations["d8_getHealth_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -43,7 +27,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RealmController_getRealms_v2"];
+        get: operations["o9_getRealms_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -59,7 +43,23 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RealmController_getRealmById_v2"];
+        get: operations["o9_getRealmById_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/realms/{id}/pp-curve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["o9_getRealmPPCurve_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -75,7 +75,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayers_v2"];
+        get: operations["Y7_getPlayers_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -91,7 +91,39 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerCount_v2"];
+        get: operations["Y7_getPlayerCount_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/players/live-ids": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getLivePlayerIdAliases_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/players/vanity/{slug}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getPlayerByVanity_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -107,7 +139,23 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayer_v2"];
+        get: operations["Y7_getPlayer_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/players/{id}/profile": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getPlayerProfile_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -123,7 +171,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerBasic_v2"];
+        get: operations["Y7_getPlayerBasic_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -139,7 +187,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerHistory_v2"];
+        get: operations["Y7_getPlayerHistory_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -155,7 +203,23 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getGlobalPlayerHistory_v2"];
+        get: operations["Y7_getGlobalPlayerHistory_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/players/{id}/scores/hash/{hash}/{mode}/{difficulty}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getPlayerScoreByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -171,7 +235,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerScores_v2"];
+        get: operations["Y7_getPlayerScores_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -187,7 +251,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerAliasController_getAliases_v2"];
+        get: operations["PFt_getAliases_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -205,7 +269,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerAliasController_disableAlias_v2"];
+        post: operations["PFt_disableAlias_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -221,7 +285,23 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerAliasController_disableAllAliases_v2"];
+        post: operations["PFt_disableAllAliases_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/player/{id}/relationships": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["U7_getRelationships_v2"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -237,7 +317,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerRelationshipController_followPlayer_v2"];
+        post: operations["U7_followPlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -253,7 +333,23 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerRelationshipController_unfollowPlayer_v2"];
+        post: operations["U7_unfollowPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/players/{id}/report": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G7_submitProfileReport_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -267,7 +363,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardListings_v2"];
+        get: operations["O8_getLeaderboardListings_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -283,7 +379,23 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardById_v2"];
+        get: operations["O8_getLeaderboardById_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/leaderboards/{id}/play-stats": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["O8_getLeaderboardPlayStatsById_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -299,7 +411,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardScoresById_v2"];
+        get: operations["O8_getLeaderboardScoresById_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -315,7 +427,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getDifficultiesForHash_v2"];
+        get: operations["O8_getDifficultiesForHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -331,7 +443,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardByHash_v2"];
+        get: operations["O8_getLeaderboardByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -347,9 +459,441 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardScoresByHash_v2"];
+        get: operations["O8_getLeaderboardScoresByHash_v2"];
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["C5_listTournaments_v2"];
+        put?: never;
+        post: operations["C5_createTournament_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["C5_getWorkflowOptions_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/settings": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["C5_getSettings_v2"];
+        put: operations["C5_upsertSettings_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/player/tournaments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_listPlayerTournaments_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/player/tournaments/{tournamentId}/rooms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_listPlayerRooms_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/player/tournaments/{tournamentId}/rooms/{matchId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_getPlayerRoom_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/player/rooms/by-invite-code/{inviteCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_getPlayerRoomByInviteCode_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/roles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["x5_listRoles_v2"];
+        put?: never;
+        post: operations["x5_upsertRole_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/roles/{roleId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["x5_deleteRole_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/roles/{roleId}/assign": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["x5_assignRole_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/roles/{roleId}/assignments/{playerId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["x5_unassignRole_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/teams": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["x5_listTeams_v2"];
+        put?: never;
+        post: operations["x5_upsertTeam_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/teams/{teamId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["x5_deleteTeam_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/authorized-players": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["x5_listAuthorizedPlayers_v2"];
+        put: operations["x5_syncAuthorizedPlayers_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["m5_listRooms_v2"];
+        put?: never;
+        post: operations["m5_upsertRoom_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/view": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["m5_getRoomsView_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/view": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["m5_getRoomView_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/members": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["m5_setRoomMembers_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/song": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["m5_setRoomSong_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/close": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["m5_closeRoom_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["m5_deleteRoom_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_startMap_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/return-to-menu": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_returnToMenu_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/prompt": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_prompt_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/players/{playerId}/bottify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_bottifyPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/players/{playerId}/unbottify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_unbottifyPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/live/tournaments/{tournamentId}/watch/follow": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_followRoom_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -363,7 +907,23 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["MapController_getMapListings_v2"];
+        get: operations["P5_getMapListings_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/maps/hash/{hash}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["P5_getMapByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -379,7 +939,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["MapController_getMapById_v2"];
+        get: operations["P5_getMapById_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -395,7 +955,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_steamLogin_v2"];
+        get: operations["SDt_steamLogin_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -411,7 +971,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_steamCallback_v2"];
+        get: operations["SDt_steamCallback_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -427,7 +987,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_patreonLogin_v2"];
+        get: operations["SDt_patreonLogin_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -443,7 +1003,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_patreonCallback_v2"];
+        get: operations["SDt_patreonCallback_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -459,7 +1019,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_discordLogin_v2"];
+        get: operations["SDt_discordLogin_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -475,7 +1035,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_discordCallback_v2"];
+        get: operations["SDt_discordCallback_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -491,7 +1051,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_getToken_v2"];
+        get: operations["SDt_getToken_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -509,7 +1069,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AuthController_startEmailLogin_v2"];
+        post: operations["SDt_startEmailLogin_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -525,7 +1085,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AuthController_verifyEmailLogin_v2"];
+        post: operations["SDt_verifyEmailLogin_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -541,7 +1101,391 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AuthController_logout_v2"];
+        post: operations["SDt_logout_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/signup/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_startSignup_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/signup/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_completeSignup_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_loginWithPassword_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/reset/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_startPasswordReset_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/reset/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_completePasswordReset_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/credential": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Z6_getPasswordCredential_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/setup/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_startPasswordSetup_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/setup/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_completePasswordSetup_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/password/change": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_changePassword_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/passkey/register/options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_startRegistration_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/passkey/register/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_verifyRegistration_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/passkey/login/options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_startAuthentication_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/passkey/login/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_verifyAuthentication_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/passkeys": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["G6_listPasskeys_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/passkeys/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["G6_deletePasskey_v2"];
+        options?: never;
+        head?: never;
+        patch: operations["G6_renamePasskey_v2"];
+        trace?: never;
+    };
+    "/api/v2/auth/device/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["U6_startDeviceLogin_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/auth/device/status": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["U6_getDeviceLoginStatus_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/oauth/authorize/info": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["R7_getAuthorizeInfo_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/oauth/authorize/approve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["R7_approveAuthorization_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/oauth/token": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["R7_token_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/oauth/userinfo": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["R7_userinfo_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/oauth/clients": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["P7_listClients_v2"];
+        put?: never;
+        post: operations["P7_createClient_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/oauth/clients/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["P7_revokeClient_v2"];
+        options?: never;
+        head?: never;
+        patch: operations["P7_updateClient_v2"];
+        trace?: never;
+    };
+    "/api/v2/oauth/clients/{id}/rotate-secret": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["P7_rotateSecret_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -557,7 +1501,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["GameController_authenticate_v2"];
+        post: operations["IOt_authenticate_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -577,7 +1521,7 @@ export interface paths {
          * Upload a game score
          * @description Requires a game session. Lower or duplicate scores are accepted when otherwise valid.
          */
-        post: operations["GameController_uploadScore_v2"];
+        post: operations["IOt_uploadScore_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -592,7 +1536,7 @@ export interface paths {
             cookie?: never;
         };
         get?: never;
-        put: operations["GameController_setActiveRealms_v2"];
+        put: operations["IOt_setActiveRealms_v2"];
         post?: never;
         delete?: never;
         options?: never;
@@ -609,7 +1553,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["GameBuildController_registerOfficialBuild_v2"];
+        post: operations["e8_registerOfficialBuild_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -623,9 +1567,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RankingController_getRequests_v2"];
+        get: operations["r9_getRequests_v2"];
         put?: never;
-        post: operations["RankingController_createRequest_v2"];
+        post: operations["r9_createRequest_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -639,8 +1583,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RankingController_getRequestById_v2"];
-        put: operations["RankingController_replaceRequest_v2"];
+        get: operations["r9_getRequestById_v2"];
+        put: operations["r9_replaceRequest_v2"];
         post?: never;
         delete?: never;
         options?: never;
@@ -657,7 +1601,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_createUnrankRequest_v2"];
+        post: operations["r9_createUnrankRequest_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -673,7 +1617,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_rtVote_v2"];
+        post: operations["r9_rtVote_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -689,7 +1633,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_rtComment_v2"];
+        post: operations["r9_rtComment_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -705,7 +1649,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_qatVote_v2"];
+        post: operations["r9_qatVote_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -721,7 +1665,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_qatComment_v2"];
+        post: operations["r9_qatComment_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -738,10 +1682,10 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["RankingController_rtDeleteComment_v2"];
+        delete: operations["r9_rtDeleteComment_v2"];
         options?: never;
         head?: never;
-        patch: operations["RankingController_rtEditComment_v2"];
+        patch: operations["r9_rtEditComment_v2"];
         trace?: never;
     };
     "/api/v2/ranking/requests/{id}/qat/comment/{commentId}": {
@@ -754,10 +1698,10 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["RankingController_qatDeleteComment_v2"];
+        delete: operations["r9_qatDeleteComment_v2"];
         options?: never;
         head?: never;
-        patch: operations["RankingController_qatEditComment_v2"];
+        patch: operations["r9_qatEditComment_v2"];
         trace?: never;
     };
     "/api/v2/ranking/requests/{id}/qualify": {
@@ -769,7 +1713,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_qualify_v2"];
+        post: operations["r9_qualify_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -785,7 +1729,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_deny_v2"];
+        post: operations["r9_deny_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -801,7 +1745,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_approve_v2"];
+        post: operations["r9_approve_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -815,7 +1759,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_getScore_v2"];
+        get: operations["f9_getScore_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -831,7 +1775,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_getScoreHistory_v2"];
+        get: operations["f9_getScoreHistory_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -847,7 +1791,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_downloadReplay_v2"];
+        get: operations["f9_downloadReplay_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -863,7 +1807,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_getScoreStats_v2"];
+        get: operations["f9_getScoreStats_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -879,9 +1823,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AdminBadgeController_getAllBadges_v2"];
+        get: operations["oTt_getAllBadges_v2"];
         put?: never;
-        post: operations["AdminBadgeController_createBadge_v2"];
+        post: operations["oTt_createBadge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -896,9 +1840,25 @@ export interface paths {
             cookie?: never;
         };
         get?: never;
-        put: operations["AdminBadgeController_updateBadge_v2"];
+        put: operations["oTt_updateBadge_v2"];
         post?: never;
-        delete: operations["AdminBadgeController_deleteBadge_v2"];
+        delete: operations["oTt_deleteBadge_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/admin/badges/player/{playerId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["oTt_getPlayerBadges_v2"];
+        put: operations["oTt_replacePlayerBadges_v2"];
+        post?: never;
+        delete?: never;
         options?: never;
         head?: never;
         patch?: never;
@@ -913,8 +1873,8 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminBadgeController_assignBadge_v2"];
-        delete: operations["AdminBadgeController_unassignBadge_v2"];
+        post: operations["oTt_assignBadge_v2"];
+        delete: operations["oTt_unassignBadge_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -929,7 +1889,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_rankLeaderboard_v2"];
+        post: operations["bTt_rankLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -945,7 +1905,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_unrankLeaderboard_v2"];
+        post: operations["bTt_unrankLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -961,7 +1921,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_recalculatePP_v2"];
+        post: operations["bTt_recalculatePP_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -977,7 +1937,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_setManualPP_v2"];
+        post: operations["bTt_setManualPP_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -993,7 +1953,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_qualifyLeaderboard_v2"];
+        post: operations["bTt_qualifyLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1009,7 +1969,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_loveLeaderboard_v2"];
+        post: operations["bTt_loveLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1023,7 +1983,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AdminPermissionController_listPermissions_v2"];
+        get: operations["K3_listPermissions_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1042,7 +2002,7 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["AdminScoreController_deleteScore_v2"];
+        delete: operations["ETt_deleteScore_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1057,7 +2017,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUploadTrustController_createDevelopmentCredential_v2"];
+        post: operations["Q3_createDevelopmentCredential_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1073,7 +2033,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUploadTrustController_revokeDevelopmentCredential_v2"];
+        post: operations["Q3_revokeDevelopmentCredential_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1089,7 +2049,23 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUploadTrustController_revokeOfficialBuild_v2"];
+        post: operations["Q3_revokeOfficialBuild_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/admin/upload-trust/official-builds/compatibility": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Q3_getOfficialBuildCompatibility_v2"];
+        put?: never;
+        post: operations["Q3_addOfficialBuildCompatibility_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1103,9 +2079,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get?: never;
+        get: operations["BTt_getActiveBan_v2"];
         put?: never;
-        post: operations["AdminUserController_banPlayer_v2"];
+        post: operations["BTt_banPlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1121,7 +2097,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_unbanPlayer_v2"];
+        post: operations["BTt_unbanPlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1137,7 +2113,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_silencePlayer_v2"];
+        post: operations["BTt_silencePlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1153,7 +2129,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_unsilencePlayer_v2"];
+        post: operations["BTt_unsilencePlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1169,7 +2145,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_updateRoleText_v2"];
+        post: operations["BTt_updateRoleText_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1185,7 +2161,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_adminResetCountry_v2"];
+        post: operations["BTt_adminResetCountry_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1201,7 +2177,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_updatePermissions_v2"];
+        post: operations["BTt_updatePermissions_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1217,8 +2193,24 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_mergePlayer_v2"];
+        post: operations["BTt_mergePlayer_v2"];
         delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/admin/user/{id}/data": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["BTt_deleteUserData_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1231,9 +2223,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AdminVersionController_getVersions_v2"];
+        get: operations["n6_getVersions_v2"];
         put?: never;
-        post: operations["AdminVersionController_createVersion_v2"];
+        post: operations["n6_createVersion_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1249,7 +2241,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminVersionController_updateWhitelist_v2"];
+        post: operations["n6_updateWhitelist_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1266,7 +2258,7 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["AdminVersionController_deleteVersion_v2"];
+        delete: operations["n6_deleteVersion_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1279,10 +2271,90 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getMe_v2"];
+        get: operations["WIt_getMe_v2"];
         put?: never;
         post?: never;
         delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/user/@me/vanity": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["WIt_getVanity_v2"];
+        put: operations["WIt_claimVanity_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/user/@me/pinned-scores": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["WIt_updatePinnedScores_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/user/@me/profile-customization": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["WIt_updateProfileCustomization_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/user/@me/profile-customization/style": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["WIt_updateProfileCustomizationStyle_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/user/@me/profile-customization/background": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["WIt_uploadProfileCustomizationBackground_v2"];
+        delete: operations["WIt_resetProfileCustomizationBackground_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1295,7 +2367,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getMyInfo_v2"];
+        get: operations["WIt_getMyInfo_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1311,7 +2383,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getQuestKey_v2"];
+        get: operations["WIt_getQuestKey_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1327,7 +2399,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_canResetCountry_v2"];
+        get: operations["WIt_canResetCountry_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1345,7 +2417,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_resetCountry_v2"];
+        post: operations["WIt_resetCountry_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1361,7 +2433,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_updateBio_v2"];
+        post: operations["WIt_updateBio_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1377,7 +2449,23 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_updateName_v2"];
+        post: operations["WIt_updateName_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/user/live-spectating": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["WIt_updateLiveSpectating_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1393,7 +2481,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_uploadAvatar_v2"];
+        post: operations["WIt_uploadAvatar_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1407,7 +2495,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getReplaySlots_v2"];
+        get: operations["WIt_getReplaySlots_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1425,23 +2513,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_refreshPatreonBenefits_v2"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/user/perks/score-saber-2-badge": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["UserController_redeemScoreSaber2Badge_v2"];
+        post: operations["WIt_refreshPatreonBenefits_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1457,8 +2529,8 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_claimReplaySlot_v2"];
-        delete: operations["UserController_releaseReplaySlot_v2"];
+        post: operations["WIt_claimReplaySlot_v2"];
+        delete: operations["WIt_releaseReplaySlot_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1471,7 +2543,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getConnections_v2"];
+        get: operations["WIt_getConnections_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1489,7 +2561,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_switchPrimaryConnection_v2"];
+        post: operations["WIt_switchPrimaryConnection_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1505,7 +2577,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_startOculusEmailMerge_v2"];
+        post: operations["WIt_startOculusEmailMerge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1521,7 +2593,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_verifyOculusEmailMerge_v2"];
+        post: operations["WIt_verifyOculusEmailMerge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1535,7 +2607,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getAccountMergeChallenge_v2"];
+        get: operations["WIt_getAccountMergeChallenge_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1553,7 +2625,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_confirmAccountMerge_v2"];
+        post: operations["WIt_confirmAccountMerge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1570,7 +2642,7 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["UserController_removeConnection_v2"];
+        delete: operations["WIt_removeConnection_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1585,7 +2657,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["V1GameController_authenticate[0]_v1"];
+        post: operations["pRt_authenticate[0]_v1"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1599,7 +2671,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboard[0]_v1"];
+        get: operations["pRt_getLeaderboard[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1615,7 +2687,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundFriends[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundFriends[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1631,7 +2703,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundCountry[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundCountry[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1647,7 +2719,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundRegion[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundRegion[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1663,7 +2735,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundPlayer[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundPlayer[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1679,7 +2751,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayers[0]_v1"];
+        get: operations["pRt_getPlayers[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1695,7 +2767,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundCountry[0]_v1"];
+        get: operations["pRt_getPlayersAroundCountry[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1711,7 +2783,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundFriends[0]_v1"];
+        get: operations["pRt_getPlayersAroundFriends[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1727,7 +2799,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundRegion[0]_v1"];
+        get: operations["pRt_getPlayersAroundRegion[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1743,7 +2815,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundPlayer[0]_v1"];
+        get: operations["pRt_getPlayersAroundPlayer[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1761,7 +2833,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["V1GameController_uploadScore[0]_v1"];
+        post: operations["pRt_uploadScore[0]_v1"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1775,7 +2847,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_downloadReplay[0]_v1"];
+        get: operations["pRt_downloadReplay[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1791,7 +2863,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_healthCheck[0]_v1"];
+        get: operations["pRt_healthCheck[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1807,7 +2879,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_legacyApi"];
+        get: operations["B9_legacyApi"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1823,7 +2895,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerFull[0]_v1"];
+        get: operations["B9_getPlayerFull[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1839,7 +2911,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerBasic[0]_v1"];
+        get: operations["B9_getPlayerBasic[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1855,7 +2927,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerScores[0]_v1"];
+        get: operations["B9_getPlayerScores[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1871,7 +2943,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayers[0]_v1"];
+        get: operations["B9_getPlayers[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1887,7 +2959,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerCount[0]_v1"];
+        get: operations["B9_getPlayerCount[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1903,7 +2975,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardById[0]_v1"];
+        get: operations["B9_getLeaderboardById[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1919,7 +2991,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardByHash[0]_v1"];
+        get: operations["B9_getLeaderboardByHash[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1935,7 +3007,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardScoresById[0]_v1"];
+        get: operations["B9_getLeaderboardScoresById[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1951,7 +3023,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardScoresByHash[0]_v1"];
+        get: operations["B9_getLeaderboardScoresByHash[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1967,7 +3039,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardDifficulties[0]_v1"];
+        get: operations["B9_getLeaderboardDifficulties[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1983,7 +3055,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboards[0]_v1"];
+        get: operations["B9_getLeaderboards[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1999,7 +3071,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getTopRankRequests[0]_v1"];
+        get: operations["B9_getTopRankRequests[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2015,7 +3087,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getRankRequestsBelowTop[0]_v1"];
+        get: operations["B9_getRankRequestsBelowTop[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2031,7 +3103,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getRankRequest[0]_v1"];
+        get: operations["B9_getRankRequest[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2047,7 +3119,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getRankRequestByLeaderboardId[0]_v1"];
+        get: operations["B9_getRankRequestByLeaderboardId[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2068,7 +3140,7 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    RootController_getData_v2: {
+    d8_getHealth_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -2085,24 +3157,7 @@ export interface operations {
             };
         };
     };
-    HealthController_getHealth_v2: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    RealmController_getRealms_v2: {
+    o9_getRealms_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -2148,7 +3203,7 @@ export interface operations {
             };
         };
     };
-    RealmController_getRealmById_v2: {
+    o9_getRealmById_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -2268,7 +3323,118 @@ export interface operations {
             };
         };
     };
-    PlayerController_getPlayers_v2: {
+    o9_getRealmPPCurve_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Realm PP curve */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        curve: (number)[][];
+                        positiveModifierCurve: (number)[][];
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    Y7_getPlayers_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -2285,6 +3451,8 @@ export interface operations {
                 realmId?: number;
                 /** @description Include inactive players */
                 includeInactive?: string;
+                /** @description Only include players currently visible in public live presence */
+                live?: string;
                 /** @description Sort field */
                 sort?: "rank" | "countryRank" | "totalPP" | "totalScore" | "totalRankedScore" | "totalPlayedLeaderboards" | "totalPlayedRankedLeaderboards" | "totalSubmittedPlays" | "totalReplayViews" | "averageAccuracy" | "weightedAverageAccuracy" | "completionAccuracy";
                 /** @description Sort direction (defaults vary by field) */
@@ -2312,6 +3480,7 @@ export interface operations {
                             country: string;
                             role: string | null;
                             avatar: string;
+                            avatarVersion: number;
                             permissions: number;
                             banned: boolean;
                             silenced: boolean;
@@ -2321,7 +3490,9 @@ export interface operations {
                                 realmName: string;
                                 rank: number;
                                 countryRank: number;
+                                rankChange: number | null;
                                 totalPP: number;
+                                plusOnePP: number | null;
                                 totalScore: string;
                                 totalRankedScore: string;
                                 totalPlayedLeaderboards: number;
@@ -2433,15 +3604,56 @@ export interface operations {
                     };
                 };
             };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
         };
     };
-    PlayerController_getPlayerCount_v2: {
+    Y7_getPlayerCount_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
                 realmId?: number;
                 /** @description Include inactive players */
                 includeInactive?: string;
+                /** @description Only count players currently visible in public live presence */
+                live?: string;
             };
             header?: never;
             path?: never;
@@ -2546,9 +3758,405 @@ export interface operations {
                     };
                 };
             };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
         };
     };
-    PlayerController_getPlayer_v2: {
+    Y7_getLivePlayerIdAliases_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Id aliases for players whose live presence connection id differs from their primary public player id */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @description Primary public player id used across the site */
+                        playerId: string;
+                        /** @description Public id the player is connected to live presence with */
+                        livePlayerId: string;
+                    }[];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Y7_getPlayerByVanity_v2: {
+        parameters: {
+            query?: {
+                /** @description Realm ID (defaults to the active realm) */
+                realmId?: number;
+            };
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Player profile resolved by vanity slug */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: string;
+                        name: string;
+                        playerNameInGame: string;
+                        country: string;
+                        role: string | null;
+                        avatar: string;
+                        avatarVersion: number;
+                        permissions: number;
+                        banned: boolean;
+                        silenced: boolean;
+                        inactive: boolean;
+                        stats: {
+                            realmId: number;
+                            realmName: string;
+                            rank: number;
+                            countryRank: number;
+                            rankChange: number | null;
+                            totalPP: number;
+                            plusOnePP: number | null;
+                            totalScore: string;
+                            totalRankedScore: string;
+                            totalPlayedLeaderboards: number;
+                            totalPlayedRankedLeaderboards: number;
+                            totalSubmittedPlays: number;
+                            totalReplayViews: number;
+                            averageAccuracy: number;
+                            weightedAverageAccuracy: number;
+                            completionAccuracy: number;
+                            device: {
+                                hmd: string | null;
+                                controllerLeft: string | null;
+                                controllerRight: string | null;
+                            } | null;
+                        };
+                        bio: string | null;
+                        vanity: string | null;
+                        profileCustomization: {
+                            backgroundImage: string | null;
+                            backgroundImageVersion: number | null;
+                            accentColor: string | null;
+                            accentForegroundColor: string | null;
+                            accentForegroundActiveColor: string | null;
+                            supporterNameColorEnabled: boolean;
+                            badgeOrder: number[] | null;
+                            badgeComments: {
+                                [key: string]: string;
+                            } | null;
+                            statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                            enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                            chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                            sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                        };
+                        createdAt: string;
+                        lastSeenAt: string;
+                        badges: {
+                            id: number;
+                            image: string;
+                            description: string;
+                        }[];
+                        pinnedScores: {
+                            score: {
+                                score: {
+                                    id: number;
+                                    rank: number;
+                                    unmodifiedScore: number;
+                                    modifiedScore: number;
+                                    accuracy: number;
+                                    pp: number;
+                                    weight: number;
+                                    mods: string[];
+                                    badCuts: number;
+                                    missedNotes: number;
+                                    maxCombo: number;
+                                    fullCombo: boolean;
+                                    hasReplay: boolean;
+                                    replayViewCount?: number;
+                                    personalBest: boolean;
+                                    legacyHmdId: number | null;
+                                    version: string | null;
+                                    /** @enum {string} */
+                                    playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
+                                    playOutcomeTime: number | null;
+                                    createdAt: string;
+                                    hasHistory?: boolean;
+                                    player: {
+                                        id: string;
+                                        name: string;
+                                        playerNameInGame: string;
+                                        country: string;
+                                        role: string | null;
+                                        avatar: string;
+                                        avatarVersion: number;
+                                        permissions: number;
+                                    };
+                                    device: {
+                                        hmd: string | null;
+                                        controllerLeft: string | null;
+                                        controllerRight: string | null;
+                                    } | null;
+                                };
+                                leaderboard: {
+                                    id: number;
+                                    map: {
+                                        id: number;
+                                        hash: string;
+                                        bsid: string | null;
+                                        songName: string;
+                                        songSubName: string;
+                                        songAuthorName: string;
+                                        levelAuthorName: string;
+                                        bpm: number;
+                                        coverUrl: string;
+                                        verified: boolean;
+                                    };
+                                    difficulty: {
+                                        id: number;
+                                        difficulty: number;
+                                        rawDifficulty: string;
+                                        gameMode: string;
+                                    };
+                                    maxScore: number;
+                                    totalScores: number;
+                                    dailyScores: number;
+                                    createdAt: string;
+                                    realm: {
+                                        realmId: number;
+                                        realmName: string;
+                                        /** @enum {string} */
+                                        leaderboardStatus: "UNRANKED" | "RANKED" | "QUALIFIED" | "LOVED";
+                                        positiveModifiers: boolean;
+                                        stars: number;
+                                        rankedAt: string | null;
+                                        qualifiedAt: string | null;
+                                        lovedAt: string | null;
+                                    };
+                                };
+                            };
+                            comment: string;
+                        }[];
+                        followers: number;
+                        following: number;
+                        platformFriends: number;
+                        recentFollowers: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                        }[];
+                        recentFollowing: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                        }[];
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    Y7_getPlayer_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -2575,6 +4183,7 @@ export interface operations {
                         country: string;
                         role: string | null;
                         avatar: string;
+                        avatarVersion: number;
                         permissions: number;
                         banned: boolean;
                         silenced: boolean;
@@ -2584,7 +4193,9 @@ export interface operations {
                             realmName: string;
                             rank: number;
                             countryRank: number;
+                            rankChange: number | null;
                             totalPP: number;
+                            plusOnePP: number | null;
                             totalScore: string;
                             totalRankedScore: string;
                             totalPlayedLeaderboards: number;
@@ -2601,6 +4212,23 @@ export interface operations {
                             } | null;
                         };
                         bio: string | null;
+                        vanity: string | null;
+                        profileCustomization: {
+                            backgroundImage: string | null;
+                            backgroundImageVersion: number | null;
+                            accentColor: string | null;
+                            accentForegroundColor: string | null;
+                            accentForegroundActiveColor: string | null;
+                            supporterNameColorEnabled: boolean;
+                            badgeOrder: number[] | null;
+                            badgeComments: {
+                                [key: string]: string;
+                            } | null;
+                            statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                            enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                            chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                            sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                        };
                         createdAt: string;
                         lastSeenAt: string;
                         badges: {
@@ -2608,8 +4236,107 @@ export interface operations {
                             image: string;
                             description: string;
                         }[];
+                        pinnedScores: {
+                            score: {
+                                score: {
+                                    id: number;
+                                    rank: number;
+                                    unmodifiedScore: number;
+                                    modifiedScore: number;
+                                    accuracy: number;
+                                    pp: number;
+                                    weight: number;
+                                    mods: string[];
+                                    badCuts: number;
+                                    missedNotes: number;
+                                    maxCombo: number;
+                                    fullCombo: boolean;
+                                    hasReplay: boolean;
+                                    replayViewCount?: number;
+                                    personalBest: boolean;
+                                    legacyHmdId: number | null;
+                                    version: string | null;
+                                    /** @enum {string} */
+                                    playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
+                                    playOutcomeTime: number | null;
+                                    createdAt: string;
+                                    hasHistory?: boolean;
+                                    player: {
+                                        id: string;
+                                        name: string;
+                                        playerNameInGame: string;
+                                        country: string;
+                                        role: string | null;
+                                        avatar: string;
+                                        avatarVersion: number;
+                                        permissions: number;
+                                    };
+                                    device: {
+                                        hmd: string | null;
+                                        controllerLeft: string | null;
+                                        controllerRight: string | null;
+                                    } | null;
+                                };
+                                leaderboard: {
+                                    id: number;
+                                    map: {
+                                        id: number;
+                                        hash: string;
+                                        bsid: string | null;
+                                        songName: string;
+                                        songSubName: string;
+                                        songAuthorName: string;
+                                        levelAuthorName: string;
+                                        bpm: number;
+                                        coverUrl: string;
+                                        verified: boolean;
+                                    };
+                                    difficulty: {
+                                        id: number;
+                                        difficulty: number;
+                                        rawDifficulty: string;
+                                        gameMode: string;
+                                    };
+                                    maxScore: number;
+                                    totalScores: number;
+                                    dailyScores: number;
+                                    createdAt: string;
+                                    realm: {
+                                        realmId: number;
+                                        realmName: string;
+                                        /** @enum {string} */
+                                        leaderboardStatus: "UNRANKED" | "RANKED" | "QUALIFIED" | "LOVED";
+                                        positiveModifiers: boolean;
+                                        stars: number;
+                                        rankedAt: string | null;
+                                        qualifiedAt: string | null;
+                                        lovedAt: string | null;
+                                    };
+                                };
+                            };
+                            comment: string;
+                        }[];
                         followers: number;
                         following: number;
+                        platformFriends: number;
+                        recentFollowers: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                        }[];
+                        recentFollowing: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                        }[];
                     };
                 };
             };
@@ -2705,7 +4432,306 @@ export interface operations {
             };
         };
     };
-    PlayerController_getPlayerBasic_v2: {
+    Y7_getPlayerProfile_v2: {
+        parameters: {
+            query?: {
+                /** @description Realm ID (defaults to the active realm) */
+                realmId?: number;
+            };
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Player profile bundle: profile, realm history and aliases */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        player: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                            permissions: number;
+                            banned: boolean;
+                            silenced: boolean;
+                            inactive: boolean;
+                            stats: {
+                                realmId: number;
+                                realmName: string;
+                                rank: number;
+                                countryRank: number;
+                                rankChange: number | null;
+                                totalPP: number;
+                                plusOnePP: number | null;
+                                totalScore: string;
+                                totalRankedScore: string;
+                                totalPlayedLeaderboards: number;
+                                totalPlayedRankedLeaderboards: number;
+                                totalSubmittedPlays: number;
+                                totalReplayViews: number;
+                                averageAccuracy: number;
+                                weightedAverageAccuracy: number;
+                                completionAccuracy: number;
+                                device: {
+                                    hmd: string | null;
+                                    controllerLeft: string | null;
+                                    controllerRight: string | null;
+                                } | null;
+                            };
+                            bio: string | null;
+                            vanity: string | null;
+                            profileCustomization: {
+                                backgroundImage: string | null;
+                                backgroundImageVersion: number | null;
+                                accentColor: string | null;
+                                accentForegroundColor: string | null;
+                                accentForegroundActiveColor: string | null;
+                                supporterNameColorEnabled: boolean;
+                                badgeOrder: number[] | null;
+                                badgeComments: {
+                                    [key: string]: string;
+                                } | null;
+                                statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                                enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                                chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                                sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                            };
+                            createdAt: string;
+                            lastSeenAt: string;
+                            badges: {
+                                id: number;
+                                image: string;
+                                description: string;
+                            }[];
+                            pinnedScores: {
+                                score: {
+                                    score: {
+                                        id: number;
+                                        rank: number;
+                                        unmodifiedScore: number;
+                                        modifiedScore: number;
+                                        accuracy: number;
+                                        pp: number;
+                                        weight: number;
+                                        mods: string[];
+                                        badCuts: number;
+                                        missedNotes: number;
+                                        maxCombo: number;
+                                        fullCombo: boolean;
+                                        hasReplay: boolean;
+                                        replayViewCount?: number;
+                                        personalBest: boolean;
+                                        legacyHmdId: number | null;
+                                        version: string | null;
+                                        /** @enum {string} */
+                                        playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
+                                        playOutcomeTime: number | null;
+                                        createdAt: string;
+                                        hasHistory?: boolean;
+                                        player: {
+                                            id: string;
+                                            name: string;
+                                            playerNameInGame: string;
+                                            country: string;
+                                            role: string | null;
+                                            avatar: string;
+                                            avatarVersion: number;
+                                            permissions: number;
+                                        };
+                                        device: {
+                                            hmd: string | null;
+                                            controllerLeft: string | null;
+                                            controllerRight: string | null;
+                                        } | null;
+                                    };
+                                    leaderboard: {
+                                        id: number;
+                                        map: {
+                                            id: number;
+                                            hash: string;
+                                            bsid: string | null;
+                                            songName: string;
+                                            songSubName: string;
+                                            songAuthorName: string;
+                                            levelAuthorName: string;
+                                            bpm: number;
+                                            coverUrl: string;
+                                            verified: boolean;
+                                        };
+                                        difficulty: {
+                                            id: number;
+                                            difficulty: number;
+                                            rawDifficulty: string;
+                                            gameMode: string;
+                                        };
+                                        maxScore: number;
+                                        totalScores: number;
+                                        dailyScores: number;
+                                        createdAt: string;
+                                        realm: {
+                                            realmId: number;
+                                            realmName: string;
+                                            /** @enum {string} */
+                                            leaderboardStatus: "UNRANKED" | "RANKED" | "QUALIFIED" | "LOVED";
+                                            positiveModifiers: boolean;
+                                            stars: number;
+                                            rankedAt: string | null;
+                                            qualifiedAt: string | null;
+                                            lovedAt: string | null;
+                                        };
+                                    };
+                                };
+                                comment: string;
+                            }[];
+                            followers: number;
+                            following: number;
+                            platformFriends: number;
+                            recentFollowers: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                            }[];
+                            recentFollowing: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                            }[];
+                        };
+                        history: {
+                            rank: number;
+                            totalPP: number;
+                            totalScore: string;
+                            totalRankedScore: string;
+                            totalPlayedLeaderboards: number;
+                            totalPlayedRankedLeaderboards: number;
+                            totalSubmittedPlays: number;
+                            totalReplayViews: number;
+                            averageAccuracy: number;
+                            weightedAverageAccuracy: number;
+                            completionAccuracy: number;
+                            estimated: boolean;
+                            createdAt: string;
+                        }[];
+                        aliases: {
+                            id: number;
+                            alias: string;
+                            disabled: boolean;
+                            createdAt: string;
+                        }[];
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    Y7_getPlayerBasic_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -2732,6 +4758,7 @@ export interface operations {
                         country: string;
                         role: string | null;
                         avatar: string;
+                        avatarVersion: number;
                         permissions: number;
                         banned: boolean;
                         silenced: boolean;
@@ -2741,7 +4768,9 @@ export interface operations {
                             realmName: string;
                             rank: number;
                             countryRank: number;
+                            rankChange: number | null;
                             totalPP: number;
+                            plusOnePP: number | null;
                             totalScore: string;
                             totalRankedScore: string;
                             totalPlayedLeaderboards: number;
@@ -2852,7 +4881,7 @@ export interface operations {
             };
         };
     };
-    PlayerController_getPlayerHistory_v2: {
+    Y7_getPlayerHistory_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -2981,7 +5010,7 @@ export interface operations {
             };
         };
     };
-    PlayerController_getGlobalPlayerHistory_v2: {
+    Y7_getGlobalPlayerHistory_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -3082,7 +5111,163 @@ export interface operations {
             };
         };
     };
-    PlayerController_getPlayerScores_v2: {
+    Y7_getPlayerScoreByHash_v2: {
+        parameters: {
+            query?: {
+                /** @description Realm ID (defaults to the active realm) */
+                realmId?: number;
+            };
+            header?: never;
+            path: {
+                id: string;
+                hash: string;
+                mode: string;
+                difficulty: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Player's score by hash and difficulty */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        rank: number;
+                        unmodifiedScore: number;
+                        modifiedScore: number;
+                        accuracy: number;
+                        pp: number;
+                        weight: number;
+                        mods: string[];
+                        badCuts: number;
+                        missedNotes: number;
+                        maxCombo: number;
+                        fullCombo: boolean;
+                        hasReplay: boolean;
+                        replayViewCount?: number;
+                        personalBest: boolean;
+                        legacyHmdId: number | null;
+                        version: string | null;
+                        /** @enum {string} */
+                        playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
+                        playOutcomeTime: number | null;
+                        createdAt: string;
+                        hasHistory?: boolean;
+                        player: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                            permissions: number;
+                        };
+                        device: {
+                            hmd: string | null;
+                            controllerLeft: string | null;
+                            controllerRight: string | null;
+                        } | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    Y7_getPlayerScores_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -3138,6 +5323,7 @@ export interface operations {
                                 maxCombo: number;
                                 fullCombo: boolean;
                                 hasReplay: boolean;
+                                replayViewCount?: number;
                                 personalBest: boolean;
                                 legacyHmdId: number | null;
                                 version: string | null;
@@ -3145,6 +5331,7 @@ export interface operations {
                                 playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
                                 playOutcomeTime: number | null;
                                 createdAt: string;
+                                hasHistory?: boolean;
                                 player: {
                                     id: string;
                                     name: string;
@@ -3152,6 +5339,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 device: {
@@ -3298,7 +5486,7 @@ export interface operations {
             };
         };
     };
-    PlayerAliasController_getAliases_v2: {
+    PFt_getAliases_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -3390,7 +5578,7 @@ export interface operations {
             };
         };
     };
-    PlayerAliasController_disableAlias_v2: {
+    PFt_disableAlias_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -3501,7 +5689,7 @@ export interface operations {
             };
         };
     };
-    PlayerAliasController_disableAllAliases_v2: {
+    PFt_disableAllAliases_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -3590,7 +5778,166 @@ export interface operations {
             };
         };
     };
-    PlayerRelationshipController_followPlayer_v2: {
+    U7_getRelationships_v2: {
+        parameters: {
+            query: {
+                type: "followers" | "following" | "platform-friends";
+                /** @description Page number */
+                page?: number;
+                /** @description Items per page (max: 50) */
+                limit?: number;
+            };
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Player followers, following or platform friends. Platform-friend identities are owner-only */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: {
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            };
+                            /** @enum {string} */
+                            relation: "platform-friend" | "follow";
+                        }[];
+                        metadata: {
+                            page: number;
+                            itemsPerPage: number;
+                            totalItems: number;
+                            totalPages: number;
+                        };
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    U7_followPlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -3720,7 +6067,7 @@ export interface operations {
             };
         };
     };
-    PlayerRelationshipController_unfollowPlayer_v2: {
+    U7_unfollowPlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -3850,7 +6197,175 @@ export interface operations {
             };
         };
     };
-    LeaderboardController_getLeaderboardListings_v2: {
+    G7_submitProfileReport_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /**
+                     * @description Reason for the profile report
+                     * @enum {string}
+                     */
+                    reason: "INAPPROPRIATE_PROFILE" | "IMPERSONATION" | "HARASSMENT" | "CHEATING" | "OTHER";
+                    /**
+                     * @description Optional report details
+                     * @default
+                     */
+                    details?: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Submit a profile report */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    O8_getLeaderboardListings_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -4020,7 +6535,7 @@ export interface operations {
             };
         };
     };
-    LeaderboardController_getLeaderboardById_v2: {
+    O8_getLeaderboardById_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -4170,7 +6685,137 @@ export interface operations {
             };
         };
     };
-    LeaderboardController_getLeaderboardScoresById_v2: {
+    O8_getLeaderboardPlayStatsById_v2: {
+        parameters: {
+            query?: {
+                /** @description Realm ID (defaults to the active realm) */
+                realmId?: number;
+            };
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Leaderboard play outcome stats */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        totalPlays: number;
+                        clearPlays: number;
+                        failPlays: number;
+                        quitPlays: number;
+                        restartPlays: number;
+                        unknownTimePlays: number;
+                        bucketSizeSeconds: number;
+                        refreshedAt: string;
+                        buckets: {
+                            startSeconds: number;
+                            failPlays: number;
+                            quitPlays: number;
+                            restartPlays: number;
+                        }[];
+                    } | null;
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    O8_getLeaderboardScoresById_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -4221,6 +6866,7 @@ export interface operations {
                             maxCombo: number;
                             fullCombo: boolean;
                             hasReplay: boolean;
+                            replayViewCount?: number;
                             personalBest: boolean;
                             legacyHmdId: number | null;
                             version: string | null;
@@ -4228,6 +6874,7 @@ export interface operations {
                             playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
                             playOutcomeTime: number | null;
                             createdAt: string;
+                            hasHistory?: boolean;
                             player: {
                                 id: string;
                                 name: string;
@@ -4235,6 +6882,7 @@ export interface operations {
                                 country: string;
                                 role: string | null;
                                 avatar: string;
+                                avatarVersion: number;
                                 permissions: number;
                             };
                             device: {
@@ -4344,7 +6992,7 @@ export interface operations {
             };
         };
     };
-    LeaderboardController_getDifficultiesForHash_v2: {
+    O8_getDifficultiesForHash_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -4464,7 +7112,7 @@ export interface operations {
             };
         };
     };
-    LeaderboardController_getLeaderboardByHash_v2: {
+    O8_getLeaderboardByHash_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -4616,7 +7264,7 @@ export interface operations {
             };
         };
     };
-    LeaderboardController_getLeaderboardScoresByHash_v2: {
+    O8_getLeaderboardScoresByHash_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -4671,6 +7319,7 @@ export interface operations {
                             maxCombo: number;
                             fullCombo: boolean;
                             hasReplay: boolean;
+                            replayViewCount?: number;
                             personalBest: boolean;
                             legacyHmdId: number | null;
                             version: string | null;
@@ -4678,6 +7327,7 @@ export interface operations {
                             playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
                             playOutcomeTime: number | null;
                             createdAt: string;
+                            hasHistory?: boolean;
                             player: {
                                 id: string;
                                 name: string;
@@ -4685,6 +7335,7 @@ export interface operations {
                                 country: string;
                                 role: string | null;
                                 avatar: string;
+                                avatarVersion: number;
                                 permissions: number;
                             };
                             device: {
@@ -4713,6 +7364,7 @@ export interface operations {
                             maxCombo: number;
                             fullCombo: boolean;
                             hasReplay: boolean;
+                            replayViewCount?: number;
                             personalBest: boolean;
                             legacyHmdId: number | null;
                             version: string | null;
@@ -4720,6 +7372,7 @@ export interface operations {
                             playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
                             playOutcomeTime: number | null;
                             createdAt: string;
+                            hasHistory?: boolean;
                             player: {
                                 id: string;
                                 name: string;
@@ -4727,6 +7380,7 @@ export interface operations {
                                 country: string;
                                 role: string | null;
                                 avatar: string;
+                                avatarVersion: number;
                                 permissions: number;
                             };
                             device: {
@@ -4830,7 +7484,5442 @@ export interface operations {
             };
         };
     };
-    MapController_getMapListings_v2: {
+    C5_listTournaments_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live tournaments available to the current player */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        name: string;
+                        /** @enum {string} */
+                        status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                        roleNames: string[];
+                        permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        createdAt: string;
+                        updatedAt: string;
+                    }[];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    C5_createTournament_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    name: string;
+                    staffPermissions?: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                };
+            };
+        };
+        responses: {
+            /** @description Created live tournament */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        name: string;
+                        /** @enum {string} */
+                        status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                        roleNames: string[];
+                        permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    C5_getWorkflowOptions_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live workflow option values */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentStatuses: ("DRAFT" | "ACTIVE" | "ARCHIVED")[];
+                        playerPlatforms: ("STEAM" | "OCULUS" | "UNKNOWN")[];
+                        roomRosterModes: ("TEAM" | "FLAT")[];
+                        roomMemberRoles: ("PLAYER" | "VIEWER")[];
+                        mapDifficulties: ("Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus")[];
+                        mapCharacteristics: ("Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow")[];
+                        tournamentPermissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    C5_getSettings_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live tournament settings */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        name: string;
+                        /** @enum {string} */
+                        status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                        deniedMods: string[];
+                        liveConnectionUrl: string | null;
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    C5_upsertSettings_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    name?: string;
+                    /** @enum {string} */
+                    status?: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                    deniedMods?: string[];
+                };
+            };
+        };
+        responses: {
+            /** @description Updated live tournament settings */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        name: string;
+                        /** @enum {string} */
+                        status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                        deniedMods: string[];
+                        liveConnectionUrl: string | null;
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    y5_listPlayerTournaments_v2: {
+        parameters: {
+            query?: never;
+            header?: {
+                /** @description Game session key for live player API clients. */
+                "x-session-key"?: string;
+                /** @description Game session id for live player API clients. */
+                "x-session-id"?: string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Active live tournaments available to the current player as a participant */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        name: string;
+                        /** @enum {string} */
+                        status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                        permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        roomSummary: string;
+                        createdAt: string;
+                        updatedAt: string;
+                    }[];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    y5_listPlayerRooms_v2: {
+        parameters: {
+            query?: never;
+            header?: {
+                /** @description Game session key for live player API clients. */
+                "x-session-key"?: string;
+                /** @description Game session id for live player API clients. */
+                "x-session-id"?: string;
+            };
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live match rooms available to the current player as a participant */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        matchId: string;
+                        inviteCode: string;
+                        /** @enum {string} */
+                        state: "OPEN" | "CLOSED" | "ARCHIVED";
+                        /** @enum {string} */
+                        rosterMode: "TEAM" | "FLAT";
+                        playerCount: number;
+                        selectedSong: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        } | null;
+                        createdAt: string;
+                        updatedAt: string;
+                    }[];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    y5_getPlayerRoom_v2: {
+        parameters: {
+            query?: never;
+            header?: {
+                /** @description Game session key for live player API clients. */
+                "x-session-key"?: string;
+                /** @description Game session id for live player API clients. */
+                "x-session-id"?: string;
+            };
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live match room details available to the current player as a participant */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        matchId: string;
+                        inviteCode: string;
+                        /** @enum {string} */
+                        state: "OPEN" | "CLOSED" | "ARCHIVED";
+                        /** @enum {string} */
+                        rosterMode: "TEAM" | "FLAT";
+                        playerCount: number;
+                        selectedSong: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        } | null;
+                        members: {
+                            playerId: string;
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            teamId: number | null;
+                            teamName: string | null;
+                            connected: boolean;
+                            isBot: boolean;
+                            /** @enum {string} */
+                            role: "PLAYER" | "VIEWER";
+                            active: boolean;
+                            /** @enum {string} */
+                            playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                            /** @enum {string} */
+                            downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                            joinedAt: string;
+                            lastSeenAt: string;
+                        }[];
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    y5_getPlayerRoomByInviteCode_v2: {
+        parameters: {
+            query?: never;
+            header?: {
+                /** @description Game session key for live player API clients. */
+                "x-session-key"?: string;
+                /** @description Game session id for live player API clients. */
+                "x-session-id"?: string;
+            };
+            path: {
+                inviteCode: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live match room details for a participant invite code */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        tournamentId: string;
+                        matchId: string;
+                        inviteCode: string;
+                        /** @enum {string} */
+                        state: "OPEN" | "CLOSED" | "ARCHIVED";
+                        /** @enum {string} */
+                        rosterMode: "TEAM" | "FLAT";
+                        playerCount: number;
+                        selectedSong: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        } | null;
+                        members: {
+                            playerId: string;
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            teamId: number | null;
+                            teamName: string | null;
+                            connected: boolean;
+                            isBot: boolean;
+                            /** @enum {string} */
+                            role: "PLAYER" | "VIEWER";
+                            active: boolean;
+                            /** @enum {string} */
+                            playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                            /** @enum {string} */
+                            downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                            joinedAt: string;
+                            lastSeenAt: string;
+                        }[];
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    x5_listRoles_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live tournament roles */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        name: string;
+                        description: string | null;
+                        color: string | null;
+                        order: number;
+                        permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        assignments: {
+                            roleId: number;
+                            playerId: string;
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            assignedAt: string;
+                        }[];
+                        createdAt: string;
+                        updatedAt: string;
+                    }[];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_upsertRole_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    id?: number;
+                    name: string;
+                    description?: string | null;
+                    color?: string | null;
+                    order?: number;
+                    permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                };
+            };
+        };
+        responses: {
+            /** @description Created or updated live tournament role */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        name: string;
+                        description: string | null;
+                        color: string | null;
+                        order: number;
+                        permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        assignments: {
+                            roleId: number;
+                            playerId: string;
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            assignedAt: string;
+                        }[];
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_deleteRole_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                roleId: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted live tournament role */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_assignRole_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                roleId: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    playerId: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Assigned live tournament role */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_unassignRole_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                roleId: number;
+                playerId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Removed live tournament role assignment */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_listTeams_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live tournament teams */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        name: string;
+                        createdAt: string;
+                        updatedAt: string;
+                    }[];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_upsertTeam_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    id?: number;
+                    name: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Created or updated live tournament team */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        name: string;
+                        createdAt: string;
+                        updatedAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_deleteTeam_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                teamId: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted live tournament team */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_listAuthorizedPlayers_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Authorized live tournament players */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        playerId: string;
+                        /** @enum {string} */
+                        platform: "STEAM" | "OCULUS" | "UNKNOWN";
+                        player: {
+                            id: string;
+                            name: string;
+                            playerNameInGame: string;
+                            country: string;
+                            role: string | null;
+                            avatar: string;
+                            avatarVersion: number;
+                            permissions: number;
+                        } | null;
+                        teamId: number | null;
+                        teamName: string | null;
+                        lastSyncedAt: string | null;
+                        createdAt: string;
+                        updatedAt: string;
+                    }[];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    x5_syncAuthorizedPlayers_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    players: {
+                        playerId: string;
+                        teamId?: number | null;
+                    }[];
+                };
+            };
+        };
+        responses: {
+            /** @description Synced authorized live tournament players */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        players: {
+                            id: number;
+                            tournamentId: string;
+                            playerId: string;
+                            /** @enum {string} */
+                            platform: "STEAM" | "OCULUS" | "UNKNOWN";
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            teamId: number | null;
+                            teamName: string | null;
+                            lastSyncedAt: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        }[];
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_listRooms_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live match rooms */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        matchId: string;
+                        inviteCode: string;
+                        /** @enum {string} */
+                        state: "OPEN" | "CLOSED" | "ARCHIVED";
+                        /** @enum {string} */
+                        rosterMode: "TEAM" | "FLAT";
+                        selectedSong: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        } | null;
+                        loadedSong: boolean;
+                        members: {
+                            playerId: string;
+                            connected: boolean;
+                            isBot: boolean;
+                            /** @enum {string} */
+                            role: "PLAYER" | "VIEWER";
+                            active: boolean;
+                            /** @enum {string} */
+                            playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                            /** @enum {string} */
+                            downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                            joinedAt: string;
+                            lastSeenAt: string;
+                        }[];
+                        activePlayerIds?: string[];
+                        createdAt: string;
+                        updatedAt: string;
+                        closedAt: string | null;
+                    }[];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_upsertRoom_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    matchId: string;
+                    /** @enum {string} */
+                    rosterMode?: "TEAM" | "FLAT";
+                    members?: {
+                        playerId: string;
+                        /** @enum {string} */
+                        role?: "PLAYER" | "VIEWER";
+                    }[];
+                    activePlayerIds?: string[];
+                };
+            };
+        };
+        responses: {
+            /** @description Created or updated live match room */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        matchId: string;
+                        inviteCode: string;
+                        /** @enum {string} */
+                        state: "OPEN" | "CLOSED" | "ARCHIVED";
+                        /** @enum {string} */
+                        rosterMode: "TEAM" | "FLAT";
+                        selectedSong: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        } | null;
+                        loadedSong: boolean;
+                        members: {
+                            playerId: string;
+                            connected: boolean;
+                            isBot: boolean;
+                            /** @enum {string} */
+                            role: "PLAYER" | "VIEWER";
+                            active: boolean;
+                            /** @enum {string} */
+                            playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                            /** @enum {string} */
+                            downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                            joinedAt: string;
+                            lastSeenAt: string;
+                        }[];
+                        activePlayerIds?: string[];
+                        createdAt: string;
+                        updatedAt: string;
+                        closedAt: string | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_getRoomsView_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live rooms workflow view */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        settings: {
+                            tournamentId: string;
+                            name: string;
+                            /** @enum {string} */
+                            status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                            deniedMods: string[];
+                            liveConnectionUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        };
+                        access: {
+                            tournamentId: string;
+                            roleNames: string[];
+                            permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        };
+                        rooms: {
+                            id: number;
+                            tournamentId: string;
+                            matchId: string;
+                            inviteCode: string;
+                            /** @enum {string} */
+                            state: "OPEN" | "CLOSED" | "ARCHIVED";
+                            /** @enum {string} */
+                            rosterMode: "TEAM" | "FLAT";
+                            selectedSong: {
+                                songName: string;
+                                songSubName: string;
+                                songAuthorName: string;
+                                levelAuthorName: string;
+                                bpm: number;
+                                id: number;
+                                tournamentId: string;
+                                mapId: number;
+                                beatSaverKey: string | null;
+                                mapHash: string;
+                                /** @enum {string} */
+                                difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                                /** @enum {string} */
+                                characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                                leaderboardId: number | null;
+                                nps: number;
+                                durationSeconds: number;
+                                maxScore: number;
+                                downloadUrl: string | null;
+                                coverUrl: string | null;
+                                createdAt: string;
+                                updatedAt: string;
+                            } | null;
+                            loadedSong: boolean;
+                            members: {
+                                playerId: string;
+                                connected: boolean;
+                                isBot: boolean;
+                                /** @enum {string} */
+                                role: "PLAYER" | "VIEWER";
+                                active: boolean;
+                                /** @enum {string} */
+                                playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                                /** @enum {string} */
+                                downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                                joinedAt: string;
+                                lastSeenAt: string;
+                            }[];
+                            activePlayerIds?: string[];
+                            createdAt: string;
+                            updatedAt: string;
+                            closedAt: string | null;
+                        }[];
+                        authorizedPlayers: {
+                            id: number;
+                            tournamentId: string;
+                            playerId: string;
+                            /** @enum {string} */
+                            platform: "STEAM" | "OCULUS" | "UNKNOWN";
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            teamId: number | null;
+                            teamName: string | null;
+                            lastSyncedAt: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        }[];
+                        teams: {
+                            id: number;
+                            tournamentId: string;
+                            name: string;
+                            createdAt: string;
+                            updatedAt: string;
+                        }[];
+                        options: {
+                            tournamentStatuses: ("DRAFT" | "ACTIVE" | "ARCHIVED")[];
+                            playerPlatforms: ("STEAM" | "OCULUS" | "UNKNOWN")[];
+                            roomRosterModes: ("TEAM" | "FLAT")[];
+                            roomMemberRoles: ("PLAYER" | "VIEWER")[];
+                            mapDifficulties: ("Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus")[];
+                            mapCharacteristics: ("Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow")[];
+                            tournamentPermissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        };
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_getRoomView_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Live room workflow view */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        settings: {
+                            tournamentId: string;
+                            name: string;
+                            /** @enum {string} */
+                            status: "DRAFT" | "ACTIVE" | "ARCHIVED";
+                            deniedMods: string[];
+                            liveConnectionUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        };
+                        access: {
+                            tournamentId: string;
+                            roleNames: string[];
+                            permissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        };
+                        room: {
+                            id: number;
+                            tournamentId: string;
+                            matchId: string;
+                            inviteCode: string;
+                            /** @enum {string} */
+                            state: "OPEN" | "CLOSED" | "ARCHIVED";
+                            /** @enum {string} */
+                            rosterMode: "TEAM" | "FLAT";
+                            selectedSong: {
+                                songName: string;
+                                songSubName: string;
+                                songAuthorName: string;
+                                levelAuthorName: string;
+                                bpm: number;
+                                id: number;
+                                tournamentId: string;
+                                mapId: number;
+                                beatSaverKey: string | null;
+                                mapHash: string;
+                                /** @enum {string} */
+                                difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                                /** @enum {string} */
+                                characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                                leaderboardId: number | null;
+                                nps: number;
+                                durationSeconds: number;
+                                maxScore: number;
+                                downloadUrl: string | null;
+                                coverUrl: string | null;
+                                createdAt: string;
+                                updatedAt: string;
+                            } | null;
+                            loadedSong: boolean;
+                            members: {
+                                playerId: string;
+                                connected: boolean;
+                                isBot: boolean;
+                                /** @enum {string} */
+                                role: "PLAYER" | "VIEWER";
+                                active: boolean;
+                                /** @enum {string} */
+                                playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                                /** @enum {string} */
+                                downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                                joinedAt: string;
+                                lastSeenAt: string;
+                            }[];
+                            activePlayerIds?: string[];
+                            createdAt: string;
+                            updatedAt: string;
+                            closedAt: string | null;
+                        };
+                        finalScores: {
+                            id: number;
+                            tournamentId: string;
+                            roomId: number;
+                            matchId: string;
+                            song: {
+                                songName: string;
+                                songSubName: string;
+                                songAuthorName: string;
+                                levelAuthorName: string;
+                                bpm: number;
+                                id: number;
+                                tournamentId: string;
+                                mapId: number;
+                                beatSaverKey: string | null;
+                                mapHash: string;
+                                /** @enum {string} */
+                                difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                                /** @enum {string} */
+                                characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                                leaderboardId: number | null;
+                                nps: number;
+                                durationSeconds: number;
+                                maxScore: number;
+                                downloadUrl: string | null;
+                                coverUrl: string | null;
+                                createdAt: string;
+                                updatedAt: string;
+                            };
+                            scoreId: number;
+                            playerId: string;
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            rank: number | null;
+                            score: number;
+                            modifiedScore: number | null;
+                            maxScore: number | null;
+                            accuracy: number | null;
+                            badCuts: number;
+                            misses: number;
+                            /** @enum {string} */
+                            completion: "PASSED" | "FAILED" | "QUIT";
+                            fullCombo: boolean;
+                            reportedAt: string;
+                            createdAt: string;
+                        }[];
+                        authorizedPlayers: {
+                            id: number;
+                            tournamentId: string;
+                            playerId: string;
+                            /** @enum {string} */
+                            platform: "STEAM" | "OCULUS" | "UNKNOWN";
+                            player: {
+                                id: string;
+                                name: string;
+                                playerNameInGame: string;
+                                country: string;
+                                role: string | null;
+                                avatar: string;
+                                avatarVersion: number;
+                                permissions: number;
+                            } | null;
+                            teamId: number | null;
+                            teamName: string | null;
+                            lastSyncedAt: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        }[];
+                        teams: {
+                            id: number;
+                            tournamentId: string;
+                            name: string;
+                            createdAt: string;
+                            updatedAt: string;
+                        }[];
+                        options: {
+                            tournamentStatuses: ("DRAFT" | "ACTIVE" | "ARCHIVED")[];
+                            playerPlatforms: ("STEAM" | "OCULUS" | "UNKNOWN")[];
+                            roomRosterModes: ("TEAM" | "FLAT")[];
+                            roomMemberRoles: ("PLAYER" | "VIEWER")[];
+                            mapDifficulties: ("Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus")[];
+                            mapCharacteristics: ("Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow")[];
+                            tournamentPermissions: ("VIEW_TOURNAMENT" | "EDIT_TOURNAMENT_SETTINGS" | "EDIT_TOURNAMENT_ROLES" | "ASSIGN_TOURNAMENT_ROLES" | "SYNC_TOURNAMENT_PLAYERS" | "MANAGE_MATCH_ROOMS" | "COORDINATE_MATCHES" | "CAST_MATCHES")[];
+                        };
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_setRoomMembers_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    members: {
+                        playerId: string;
+                        /** @enum {string} */
+                        role?: "PLAYER" | "VIEWER";
+                    }[];
+                    activePlayerIds?: string[];
+                    /** @enum {string} */
+                    rosterMode?: "TEAM" | "FLAT";
+                };
+            };
+        };
+        responses: {
+            /** @description Updated live match room members */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        tournamentId: string;
+                        matchId: string;
+                        inviteCode: string;
+                        /** @enum {string} */
+                        state: "OPEN" | "CLOSED" | "ARCHIVED";
+                        /** @enum {string} */
+                        rosterMode: "TEAM" | "FLAT";
+                        selectedSong: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        } | null;
+                        loadedSong: boolean;
+                        members: {
+                            playerId: string;
+                            connected: boolean;
+                            isBot: boolean;
+                            /** @enum {string} */
+                            role: "PLAYER" | "VIEWER";
+                            active: boolean;
+                            /** @enum {string} */
+                            playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                            /** @enum {string} */
+                            downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                            joinedAt: string;
+                            lastSeenAt: string;
+                        }[];
+                        activePlayerIds?: string[];
+                        createdAt: string;
+                        updatedAt: string;
+                        closedAt: string | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_setRoomSong_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    mapId?: number | null;
+                    leaderboardId?: number | null;
+                    /** @enum {string} */
+                    difficulty?: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                    /** @enum {string} */
+                    characteristic?: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                };
+            };
+        };
+        responses: {
+            /** @description Set and load live match room song */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        room: {
+                            id: number;
+                            tournamentId: string;
+                            matchId: string;
+                            inviteCode: string;
+                            /** @enum {string} */
+                            state: "OPEN" | "CLOSED" | "ARCHIVED";
+                            /** @enum {string} */
+                            rosterMode: "TEAM" | "FLAT";
+                            selectedSong: {
+                                songName: string;
+                                songSubName: string;
+                                songAuthorName: string;
+                                levelAuthorName: string;
+                                bpm: number;
+                                id: number;
+                                tournamentId: string;
+                                mapId: number;
+                                beatSaverKey: string | null;
+                                mapHash: string;
+                                /** @enum {string} */
+                                difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                                /** @enum {string} */
+                                characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                                leaderboardId: number | null;
+                                nps: number;
+                                durationSeconds: number;
+                                maxScore: number;
+                                downloadUrl: string | null;
+                                coverUrl: string | null;
+                                createdAt: string;
+                                updatedAt: string;
+                            } | null;
+                            loadedSong: boolean;
+                            members: {
+                                playerId: string;
+                                connected: boolean;
+                                isBot: boolean;
+                                /** @enum {string} */
+                                role: "PLAYER" | "VIEWER";
+                                active: boolean;
+                                /** @enum {string} */
+                                playState: "IN_MENU" | "PAUSED" | "IN_GAME";
+                                /** @enum {string} */
+                                downloadState: "NONE" | "DOWNLOADING" | "DOWNLOADED" | "ERROR";
+                                joinedAt: string;
+                                lastSeenAt: string;
+                            }[];
+                            activePlayerIds?: string[];
+                            createdAt: string;
+                            updatedAt: string;
+                            closedAt: string | null;
+                        };
+                        song: {
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            id: number;
+                            tournamentId: string;
+                            mapId: number;
+                            beatSaverKey: string | null;
+                            mapHash: string;
+                            /** @enum {string} */
+                            difficulty: "Easy" | "Normal" | "Hard" | "Expert" | "ExpertPlus";
+                            /** @enum {string} */
+                            characteristic: "Standard" | "Lawless" | "OneSaber" | "NoArrows" | "NinetyDegree" | "ThreeSixtyDegree" | "Lightshow";
+                            leaderboardId: number | null;
+                            nps: number;
+                            durationSeconds: number;
+                            maxScore: number;
+                            downloadUrl: string | null;
+                            coverUrl: string | null;
+                            createdAt: string;
+                            updatedAt: string;
+                        };
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_closeRoom_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Closed live match room */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    m5_deleteRoom_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Deleted live match room */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    f5_startMap_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @default false */
+                    withSync?: boolean;
+                    /** @default 10000 */
+                    countdownMs?: number;
+                    /** @default false */
+                    forceStart?: boolean;
+                };
+            };
+        };
+        responses: {
+            /** @description Start map command */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    f5_returnToMenu_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Return room to menu command */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    f5_prompt_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    playerIds: string[];
+                    title?: string;
+                    message: string;
+                    primaryText?: string;
+                    secondaryText?: string;
+                    timeoutMs?: number;
+                };
+            };
+        };
+        responses: {
+            /** @description Prompt players command */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    f5_bottifyPlayer_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+                playerId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @default true */
+                    autoReady?: boolean;
+                    /** @default false */
+                    erratic?: boolean;
+                };
+            };
+        };
+        responses: {
+            /** @description Turn a room player into a live test bot */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    f5_unbottifyPlayer_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+                matchId: string;
+                playerId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Turn a live test bot back into a normal room player */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    f5_followRoom_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                tournamentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    matchId: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Follow a live room from the current player game client */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    P5_getMapListings_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -4845,7 +12934,7 @@ export interface operations {
                 minStars?: number;
                 /** @description Maximum star rating (across any difficulty) */
                 maxStars?: number;
-                /** @description Search by song name, author, or mapper (min 3 chars) */
+                /** @description Search by song name, author, mapper, map hash, or map identifier */
                 search?: string;
                 /** @description Sort field */
                 sortBy?: "createdAt" | "latestRankedAt" | "highestStars" | "totalScores" | "trending";
@@ -5000,7 +13089,157 @@ export interface operations {
             };
         };
     };
-    MapController_getMapById_v2: {
+    P5_getMapByHash_v2: {
+        parameters: {
+            query?: {
+                /** @description Realm ID (defaults to the active realm) */
+                realmId?: number;
+            };
+            header?: never;
+            path: {
+                hash: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Map details by hash */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        hash: string;
+                        bsid: string | null;
+                        songName: string;
+                        songSubName: string;
+                        songAuthorName: string;
+                        levelAuthorName: string;
+                        bpm: number;
+                        coverUrl: string;
+                        verified: boolean;
+                        totalScores: number;
+                        dailyScores: number;
+                        createdAt: string;
+                        leaderboards: {
+                            id: number;
+                            difficulty: number;
+                            gameMode: string;
+                            rawDifficulty: string;
+                            maxScore: number;
+                            totalScores: number;
+                            dailyScores: number;
+                            createdAt: string;
+                            realm: {
+                                realmId: number;
+                                realmName: string;
+                                /** @enum {string} */
+                                leaderboardStatus: "UNRANKED" | "RANKED" | "QUALIFIED" | "LOVED";
+                                positiveModifiers: boolean;
+                                stars: number;
+                                rankedAt: string | null;
+                                qualifiedAt: string | null;
+                                lovedAt: string | null;
+                            };
+                        }[];
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    P5_getMapById_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -5054,6 +13293,42 @@ export interface operations {
                                 qualifiedAt: string | null;
                                 lovedAt: string | null;
                             };
+                        }[];
+                        reuploadVersions: {
+                            id: number;
+                            hash: string;
+                            bsid: string | null;
+                            songName: string;
+                            songSubName: string;
+                            songAuthorName: string;
+                            levelAuthorName: string;
+                            bpm: number;
+                            coverUrl: string;
+                            verified: boolean;
+                            totalScores: number;
+                            dailyScores: number;
+                            createdAt: string;
+                            leaderboards: {
+                                id: number;
+                                difficulty: number;
+                                gameMode: string;
+                                rawDifficulty: string;
+                                maxScore: number;
+                                totalScores: number;
+                                dailyScores: number;
+                                createdAt: string;
+                                realm: {
+                                    realmId: number;
+                                    realmName: string;
+                                    /** @enum {string} */
+                                    leaderboardStatus: "UNRANKED" | "RANKED" | "QUALIFIED" | "LOVED";
+                                    positiveModifiers: boolean;
+                                    stars: number;
+                                    rankedAt: string | null;
+                                    qualifiedAt: string | null;
+                                    lovedAt: string | null;
+                                };
+                            }[];
                         }[];
                         rankRequest: {
                             id: number;
@@ -5157,6 +13432,7 @@ export interface operations {
                                         country: string;
                                         role: string | null;
                                         avatar: string;
+                                        avatarVersion: number;
                                         permissions: number;
                                     };
                                     comment: string;
@@ -5172,6 +13448,7 @@ export interface operations {
                                         country: string;
                                         role: string | null;
                                         avatar: string;
+                                        avatarVersion: number;
                                         permissions: number;
                                     };
                                     comment: string;
@@ -5276,7 +13553,7 @@ export interface operations {
             };
         };
     };
-    AuthController_steamLogin_v2: {
+    SDt_steamLogin_v2: {
         parameters: {
             query?: {
                 intent?: "login" | "merge";
@@ -5369,7 +13646,7 @@ export interface operations {
             };
         };
     };
-    AuthController_steamCallback_v2: {
+    SDt_steamCallback_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -5386,7 +13663,7 @@ export interface operations {
             };
         };
     };
-    AuthController_patreonLogin_v2: {
+    SDt_patreonLogin_v2: {
         parameters: {
             query?: {
                 intent?: "login" | "link";
@@ -5481,7 +13758,7 @@ export interface operations {
             };
         };
     };
-    AuthController_patreonCallback_v2: {
+    SDt_patreonCallback_v2: {
         parameters: {
             query?: {
                 /** @description Patreon OAuth authorization code */
@@ -5545,7 +13822,7 @@ export interface operations {
             };
         };
     };
-    AuthController_discordLogin_v2: {
+    SDt_discordLogin_v2: {
         parameters: {
             query?: {
                 intent?: "login" | "link";
@@ -5640,7 +13917,7 @@ export interface operations {
             };
         };
     };
-    AuthController_discordCallback_v2: {
+    SDt_discordCallback_v2: {
         parameters: {
             query?: {
                 /** @description Discord OAuth authorization code */
@@ -5704,7 +13981,7 @@ export interface operations {
             };
         };
     };
-    AuthController_getToken_v2: {
+    SDt_getToken_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -5743,7 +14020,7 @@ export interface operations {
             };
         };
     };
-    AuthController_startEmailLogin_v2: {
+    SDt_startEmailLogin_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -5885,7 +14162,7 @@ export interface operations {
             };
         };
     };
-    AuthController_verifyEmailLogin_v2: {
+    SDt_verifyEmailLogin_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -6032,7 +14309,7 @@ export interface operations {
             };
         };
     };
-    AuthController_logout_v2: {
+    SDt_logout_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -6110,7 +14387,7 @@ export interface operations {
             };
         };
     };
-    GameController_authenticate_v2: {
+    Z6_startSignup_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -6120,7 +14397,2980 @@ export interface operations {
         requestBody: {
             content: {
                 "application/json": {
-                    /** @description Auth type (0=Steam, 1=Oculus, 2=Quest key, 3=Dev) */
+                    /**
+                     * Format: email
+                     * @description Email address to send the one-time code to
+                     */
+                    email: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Start an email signup challenge */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        challengeId: string;
+                        expiresAt: string;
+                        resendAvailableAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_completeSignup_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** Format: email */
+                    email: string;
+                    challengeId: string;
+                    /** @description Six digit one-time code */
+                    code: string;
+                    /** @description Account password */
+                    password: string;
+                    /** @description Public display name; never a login identifier */
+                    displayName: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Complete signup with a verified email code, password and display name */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {string} */
+                        status: "authenticated";
+                        token: string;
+                        playerId: string;
+                    } | {
+                        /** @enum {string} */
+                        status: "support-required";
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_loginWithPassword_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** Format: email */
+                    email: string;
+                    password: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Log in with email and password */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {string} */
+                        status: "authenticated";
+                        token: string;
+                        playerId: string;
+                    } | {
+                        /** @enum {string} */
+                        status: "support-required";
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_startPasswordReset_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /**
+                     * Format: email
+                     * @description Email address to send the one-time code to
+                     */
+                    email: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Start a password reset challenge */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        challengeId: string;
+                        expiresAt: string;
+                        resendAvailableAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_completePasswordReset_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** Format: email */
+                    email: string;
+                    challengeId: string;
+                    /** @description Six digit one-time code */
+                    code: string;
+                    /** @description Account password */
+                    password: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Complete a password reset with a verified email code */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {string} */
+                        status: "authenticated";
+                        token: string;
+                        playerId: string;
+                    } | {
+                        /** @enum {string} */
+                        status: "support-required";
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_getPasswordCredential_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Current account email/password credential state */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        hasPassword: boolean;
+                        email: string | null;
+                        updatedAt: string | null;
+                        lastUsedAt: string | null;
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_startPasswordSetup_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /**
+                     * Format: email
+                     * @description Email address to send the one-time code to
+                     */
+                    email: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Start an email challenge to add password login to the current account */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        challengeId: string;
+                        expiresAt: string;
+                        resendAvailableAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_completePasswordSetup_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** Format: email */
+                    email: string;
+                    challengeId: string;
+                    /** @description Six digit one-time code */
+                    code: string;
+                    /** @description Account password */
+                    password: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Set email/password login for the current account; invalidates all other sessions */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {boolean} */
+                        success: true;
+                        token: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Z6_changePassword_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    currentPassword: string;
+                    /** @description Account password */
+                    newPassword: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Change the account password; invalidates all other sessions */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {boolean} */
+                        success: true;
+                        token: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    G6_startRegistration_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Begin passkey registration for the current account */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    G6_verifyRegistration_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @description WebAuthn registration response from the browser */
+                    response: unknown;
+                    /** @description Friendly name for this passkey */
+                    label?: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Verify the browser response and store the new passkey */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        label: string;
+                        deviceType: string;
+                        backedUp: boolean;
+                        createdAt: string;
+                        lastUsedAt: string | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    G6_startAuthentication_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Begin a usernameless passkey login */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        sessionId: string;
+                        /** @description WebAuthn credential request options */
+                        options: {
+                            [key: string]: unknown;
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    G6_verifyAuthentication_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    sessionId: string;
+                    /** @description WebAuthn authentication response from the browser */
+                    response: unknown;
+                };
+            };
+        };
+        responses: {
+            /** @description Verify the browser assertion and create a session */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {string} */
+                        status: "authenticated";
+                        token: string;
+                        playerId: string;
+                    } | {
+                        /** @enum {string} */
+                        status: "support-required";
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    G6_listPasskeys_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description List passkeys registered to the current account */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        passkeys: {
+                            id: number;
+                            label: string;
+                            deviceType: string;
+                            backedUp: boolean;
+                            createdAt: string;
+                            lastUsedAt: string | null;
+                        }[];
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    G6_deletePasskey_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Delete a passkey */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {boolean} */
+                        success: true;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    G6_renamePasskey_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    label: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Rename a passkey */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {boolean} */
+                        success: true;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    U6_startDeviceLogin_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Generate a one-time code to sign in on Beat Saber for Quest */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        code: string;
+                        expiresAt: string;
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    U6_getDeviceLoginStatus_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Check whether the current device code has been claimed in-game */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {string} */
+                        status: "pending" | "claimed" | "expired";
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    R7_getAuthorizeInfo_v2: {
+        parameters: {
+            query: {
+                /** @description OAuth client id */
+                client_id: string;
+                /** @description Exact registered redirect URI */
+                redirect_uri: string;
+                /** @description Space-separated scopes */
+                scope?: string;
+                /** @description PKCE S256 code challenge */
+                code_challenge: string;
+                code_challenge_method: "S256";
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Validate an authorization request and return consent info */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        clientId: string;
+                        name: string;
+                        description: string | null;
+                        scopes: string[];
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    R7_approveAuthorization_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @description OAuth client id */
+                    client_id: string;
+                    /** @description Exact registered redirect URI */
+                    redirect_uri: string;
+                    /**
+                     * @description Space-separated scopes
+                     * @default identity
+                     */
+                    scope?: string;
+                    /** @description PKCE S256 code challenge */
+                    code_challenge: string;
+                    /** @enum {string} */
+                    code_challenge_method: "S256";
+                    state?: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Approve an authorization request and mint a single-use code */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        redirectUrl: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    R7_token_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/x-www-form-urlencoded": {
+                    /** @description authorization_code or refresh_token */
+                    grant_type: string;
+                    client_id: string;
+                    /** @description OAuth client secret */
+                    client_secret?: string;
+                    code?: string;
+                    redirect_uri?: string;
+                    /** @description PKCE code verifier */
+                    code_verifier?: string;
+                    refresh_token?: string;
+                };
+                "application/json": {
+                    /** @description authorization_code or refresh_token */
+                    grant_type: string;
+                    client_id: string;
+                    /** @description OAuth client secret */
+                    client_secret?: string;
+                    code?: string;
+                    redirect_uri?: string;
+                    /** @description PKCE code verifier */
+                    code_verifier?: string;
+                    refresh_token?: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Exchange an authorization code or refresh token for tokens */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        access_token: string;
+                        /** @enum {string} */
+                        token_type: "Bearer";
+                        expires_in: number;
+                        refresh_token: string;
+                        scope: string;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    R7_userinfo_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Profile of the player who granted the token */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @description Primary public player id */
+                        id: string;
+                        scoresaberId: string | null;
+                        name: string;
+                        avatar: string;
+                        country: string;
+                        role: string | null;
+                        vanity: string | null;
+                        /** @description Present with the identity.providers scope */
+                        providers?: {
+                            provider: string;
+                            id: string;
+                            isPrimary: boolean;
+                        }[];
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    P7_listClients_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description List your OAuth applications */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        clients: {
+                            id: number;
+                            clientId: string;
+                            name: string;
+                            description: string | null;
+                            redirectUris: string[];
+                            allowedScopes: string;
+                            createdAt: string;
+                        }[];
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    P7_createClient_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    name: string;
+                    description?: string;
+                    redirectUris: string[];
+                    allowedScopes?: ("identity" | "identity.providers")[];
+                };
+            };
+        };
+        responses: {
+            /** @description Register an OAuth application; the secret is only returned here */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        client: {
+                            id: number;
+                            clientId: string;
+                            name: string;
+                            description: string | null;
+                            redirectUris: string[];
+                            allowedScopes: string;
+                            createdAt: string;
+                        };
+                        /** @description Shown once; store it now */
+                        clientSecret: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    P7_revokeClient_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Revoke an OAuth application; all of its tokens stop working */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    P7_updateClient_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    name?: string;
+                    description?: string | null;
+                    redirectUris?: string[];
+                    allowedScopes?: ("identity" | "identity.providers")[];
+                };
+            };
+        };
+        responses: {
+            /** @description Update an OAuth application you own */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        id: number;
+                        clientId: string;
+                        name: string;
+                        description: string | null;
+                        redirectUris: string[];
+                        allowedScopes: string;
+                        createdAt: string;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    P7_rotateSecret_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Rotate the client secret; the new secret is only returned here */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @description Shown once; store it now */
+                        clientSecret: string;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    IOt_authenticate_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @description Auth type (0=Steam, 1=Oculus, 2=Quest key, 3=Dev, 4=Device code) */
                     at: number;
                     /**
                      * @description Player platform ID
@@ -6178,6 +17428,10 @@ export interface operations {
                         clientTrust?: "official" | "development" | "legacy" | "untrusted";
                         buildId?: string;
                         uploadVersionHash?: string;
+                        /** @description Durable quest credential, returned for device-code auth */
+                        questKey?: string;
+                        /** @description Public player ID, returned for device-code auth */
+                        playerId?: string;
                     };
                 };
             };
@@ -6328,7 +17582,7 @@ export interface operations {
             };
         };
     };
-    GameController_uploadScore_v2: {
+    IOt_uploadScore_v2: {
         parameters: {
             query?: never;
             header: {
@@ -6528,7 +17782,7 @@ export interface operations {
             };
         };
     };
-    GameController_setActiveRealms_v2: {
+    IOt_setActiveRealms_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -6661,7 +17915,7 @@ export interface operations {
             };
         };
     };
-    GameBuildController_registerOfficialBuild_v2: {
+    e8_registerOfficialBuild_v2: {
         parameters: {
             query?: never;
             header: {
@@ -6678,6 +17932,17 @@ export interface operations {
                     pluginVersion: string;
                     gameVersion: string;
                     uploadVersionHash: string;
+                    /**
+                     * @default pc
+                     * @enum {string}
+                     */
+                    platform?: "pc" | "quest";
+                    supportedVersions?: {
+                        gameVersion: string;
+                        uploadVersionHash: string;
+                        /** @enum {string} */
+                        platform?: "pc" | "quest";
+                    }[];
                     /** @enum {number} */
                     protocolVersion: 2;
                     commitSha: string;
@@ -6852,7 +18117,7 @@ export interface operations {
             };
         };
     };
-    RankingController_getRequests_v2: {
+    r9_getRequests_v2: {
         parameters: {
             query?: {
                 /** @description Page number */
@@ -6897,6 +18162,12 @@ export interface operations {
                                 verified: boolean;
                             };
                             difficultyCount: number;
+                            rtVoteReadiness: {
+                                /** @enum {string} */
+                                status: "READY" | "CLOSE" | "BLOCKED" | "QUEUED";
+                                missingUpvotes: number;
+                                downvotes: number;
+                            };
                             totalRtVotes: {
                                 upvotes: number;
                                 downvotes: number;
@@ -7008,7 +18279,7 @@ export interface operations {
             };
         };
     };
-    RankingController_createRequest_v2: {
+    r9_createRequest_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -7150,6 +18421,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -7165,6 +18437,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -7307,7 +18580,7 @@ export interface operations {
             };
         };
     };
-    RankingController_getRequestById_v2: {
+    r9_getRequestById_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -7441,6 +18714,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -7456,6 +18730,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -7559,7 +18834,7 @@ export interface operations {
             };
         };
     };
-    RankingController_replaceRequest_v2: {
+    r9_replaceRequest_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -7703,6 +18978,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -7718,6 +18994,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -7860,7 +19137,7 @@ export interface operations {
             };
         };
     };
-    RankingController_createUnrankRequest_v2: {
+    r9_createUnrankRequest_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -8002,6 +19279,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -8017,6 +19295,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 comment: string;
@@ -8159,7 +19438,7 @@ export interface operations {
             };
         };
     };
-    RankingController_rtVote_v2: {
+    r9_rtVote_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -8285,7 +19564,7 @@ export interface operations {
             };
         };
     };
-    RankingController_rtComment_v2: {
+    r9_rtComment_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -8408,7 +19687,7 @@ export interface operations {
             };
         };
     };
-    RankingController_qatVote_v2: {
+    r9_qatVote_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -8534,7 +19813,7 @@ export interface operations {
             };
         };
     };
-    RankingController_qatComment_v2: {
+    r9_qatComment_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -8657,7 +19936,7 @@ export interface operations {
             };
         };
     };
-    RankingController_rtDeleteComment_v2: {
+    r9_rtDeleteComment_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -8795,7 +20074,7 @@ export interface operations {
             };
         };
     };
-    RankingController_rtEditComment_v2: {
+    r9_rtEditComment_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -8939,7 +20218,7 @@ export interface operations {
             };
         };
     };
-    RankingController_qatDeleteComment_v2: {
+    r9_qatDeleteComment_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -9077,7 +20356,7 @@ export interface operations {
             };
         };
     };
-    RankingController_qatEditComment_v2: {
+    r9_qatEditComment_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -9221,7 +20500,7 @@ export interface operations {
             };
         };
     };
-    RankingController_qualify_v2: {
+    r9_qualify_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -9344,7 +20623,7 @@ export interface operations {
             };
         };
     };
-    RankingController_deny_v2: {
+    r9_deny_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -9467,7 +20746,7 @@ export interface operations {
             };
         };
     };
-    RankingController_approve_v2: {
+    r9_approve_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -9590,7 +20869,7 @@ export interface operations {
             };
         };
     };
-    ScoreController_getScore_v2: {
+    f9_getScore_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -9627,6 +20906,7 @@ export interface operations {
                             maxCombo: number;
                             fullCombo: boolean;
                             hasReplay: boolean;
+                            replayViewCount?: number;
                             personalBest: boolean;
                             legacyHmdId: number | null;
                             version: string | null;
@@ -9634,6 +20914,7 @@ export interface operations {
                             playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
                             playOutcomeTime: number | null;
                             createdAt: string;
+                            hasHistory?: boolean;
                             player: {
                                 id: string;
                                 name: string;
@@ -9641,6 +20922,7 @@ export interface operations {
                                 country: string;
                                 role: string | null;
                                 avatar: string;
+                                avatarVersion: number;
                                 permissions: number;
                             };
                             device: {
@@ -9715,6 +20997,9 @@ export interface operations {
                             leftSaberHitOffset: number;
                             rightSaberHitOffset: number;
                             noteSpawnOffset: number;
+                            jumpDistance?: number;
+                            pauseCount?: number;
+                            pauseTotalDurationSeconds?: number;
                             averageHeight: number;
                             averageHeadPosition: {
                                 x: number;
@@ -9729,10 +21014,16 @@ export interface operations {
                                     left: {
                                         count: number;
                                         avgScore: number;
+                                        avgCutAngle: number;
+                                        avgCutOffset: number;
+                                        avgCutScore: (number)[];
                                     }[];
                                     right: {
                                         count: number;
                                         avgScore: number;
+                                        avgCutAngle: number;
+                                        avgCutOffset: number;
+                                        avgCutScore: (number)[];
                                     }[];
                                 }[];
                                 summaryGrids: {
@@ -9883,7 +21174,7 @@ export interface operations {
             };
         };
     };
-    ScoreController_getScoreHistory_v2: {
+    f9_getScoreHistory_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -9892,6 +21183,10 @@ export interface operations {
                 page?: number;
                 /** @description Items per page (max: 100) */
                 limit?: number;
+                /** @description Filter by play outcome. accepts a single value or comma-separated values */
+                outcomes?: ("CLEAR" | "FAIL" | "QUIT" | "RESTART")[];
+                /** @description Exclude personal best attempts */
+                excludePersonalBest?: string;
             };
             header?: never;
             path: {
@@ -9901,7 +21196,7 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
-            /** @description Player's visible attempts on the same leaderboard up to this score */
+            /** @description Player's visible attempts on the same leaderboard */
             200: {
                 headers: {
                     [name: string]: unknown;
@@ -9923,6 +21218,7 @@ export interface operations {
                                 maxCombo: number;
                                 fullCombo: boolean;
                                 hasReplay: boolean;
+                                replayViewCount?: number;
                                 personalBest: boolean;
                                 legacyHmdId: number | null;
                                 version: string | null;
@@ -9930,6 +21226,7 @@ export interface operations {
                                 playOutcome: "CLEAR" | "FAIL" | "QUIT" | "RESTART";
                                 playOutcomeTime: number | null;
                                 createdAt: string;
+                                hasHistory?: boolean;
                                 player: {
                                     id: string;
                                     name: string;
@@ -9937,6 +21234,7 @@ export interface operations {
                                     country: string;
                                     role: string | null;
                                     avatar: string;
+                                    avatarVersion: number;
                                     permissions: number;
                                 };
                                 device: {
@@ -10083,7 +21381,7 @@ export interface operations {
             };
         };
     };
-    ScoreController_downloadReplay_v2: {
+    f9_downloadReplay_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -10247,7 +21545,7 @@ export interface operations {
             };
         };
     };
-    ScoreController_getScoreStats_v2: {
+    f9_getScoreStats_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -10294,6 +21592,9 @@ export interface operations {
                         leftSaberHitOffset: number;
                         rightSaberHitOffset: number;
                         noteSpawnOffset: number;
+                        jumpDistance?: number;
+                        pauseCount?: number;
+                        pauseTotalDurationSeconds?: number;
                         averageHeight: number;
                         averageHeadPosition: {
                             x: number;
@@ -10308,10 +21609,16 @@ export interface operations {
                                 left: {
                                     count: number;
                                     avgScore: number;
+                                    avgCutAngle: number;
+                                    avgCutOffset: number;
+                                    avgCutScore: (number)[];
                                 }[];
                                 right: {
                                     count: number;
                                     avgScore: number;
+                                    avgCutAngle: number;
+                                    avgCutOffset: number;
+                                    avgCutScore: (number)[];
                                 }[];
                             }[];
                             summaryGrids: {
@@ -10496,7 +21803,7 @@ export interface operations {
             };
         };
     };
-    AdminBadgeController_getAllBadges_v2: {
+    oTt_getAllBadges_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -10505,7 +21812,7 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
-            /** @description All badges */
+            /** @description Badge catalogue with assignment counts */
             200: {
                 headers: {
                     [name: string]: unknown;
@@ -10515,6 +21822,8 @@ export interface operations {
                         id: number;
                         image: string;
                         description: string;
+                        imageUrl: string;
+                        assignmentCount: number;
                     }[];
                 };
             };
@@ -10537,7 +21846,7 @@ export interface operations {
             };
         };
     };
-    AdminBadgeController_createBadge_v2: {
+    oTt_createBadge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -10546,10 +21855,9 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": {
-                    /** @description Badge image filename */
+                "multipart/form-data": {
+                    /** Format: binary */
                     image: string;
-                    /** @description Badge description */
                     description: string;
                 };
             };
@@ -10565,6 +21873,8 @@ export interface operations {
                         id: number;
                         image: string;
                         description: string;
+                        imageUrl: string;
+                        assignmentCount: number;
                     };
                 };
             };
@@ -10674,7 +21984,7 @@ export interface operations {
             };
         };
     };
-    AdminBadgeController_updateBadge_v2: {
+    oTt_updateBadge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -10685,10 +21995,9 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": {
-                    /** @description Badge image filename */
+                "multipart/form-data": {
+                    /** Format: binary */
                     image?: string;
-                    /** @description Badge description */
                     description?: string;
                 };
             };
@@ -10704,7 +22013,431 @@ export interface operations {
                         id: number;
                         image: string;
                         description: string;
+                        imageUrl: string;
+                        assignmentCount: number;
                     };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    oTt_deleteBadge_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Badge deletion result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                        assignmentCount: number;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    oTt_getPlayerBadges_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                playerId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Player's exact badge assignments */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        badgeId: number;
+                        descriptionOverride: string | null;
+                        addedAt: string;
+                    }[];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    oTt_replacePlayerBadges_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                playerId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    badges: {
+                        badgeId: number;
+                        descriptionOverride: string | null;
+                    }[];
+                };
+            };
+        };
+        responses: {
+            /** @description Replaced player's badge assignments */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        badgeId: number;
+                        descriptionOverride: string | null;
+                        addedAt: string;
+                    }[];
                 };
             };
             /**
@@ -10838,117 +22571,7 @@ export interface operations {
             };
         };
     };
-    AdminBadgeController_deleteBadge_v2: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Badge deletion result */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        success: boolean;
-                    };
-                };
-            };
-            /** @description Bad Request */
-            400: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        /** @enum {number} */
-                        statusCode: 400;
-                        /** @enum {string} */
-                        error: "Bad Request";
-                        /** @enum {string} */
-                        code: "VALIDATION_ERROR";
-                        message: string;
-                        details?: {
-                            field?: string;
-                        };
-                    } | {
-                        /** @enum {number} */
-                        statusCode: 400;
-                        /** @enum {string} */
-                        error: "Bad Request";
-                        /** @enum {string} */
-                        code: "REQUEST_VALIDATION_ERROR";
-                        message: string;
-                        details: {
-                            errors: {
-                                path: string;
-                                message: string;
-                            }[];
-                        };
-                    } | {
-                        /** @enum {number} */
-                        statusCode: 400;
-                        /** @enum {string} */
-                        error: "Bad Request";
-                        /** @enum {string} */
-                        code: "INVALID_PATH_PARAMETER";
-                        message: string;
-                        details: {
-                            errors: {
-                                path: string;
-                                message: string;
-                            }[];
-                        };
-                    };
-                };
-            };
-            /** @description Unauthorized */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        /** @enum {number} */
-                        statusCode: 401;
-                        /** @enum {string} */
-                        error: "Unauthorized";
-                        /** @enum {string} */
-                        code: "UNAUTHORIZED";
-                        message: string;
-                    };
-                };
-            };
-            /** @description Not Found */
-            404: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        /** @enum {number} */
-                        statusCode: 404;
-                        /** @enum {string} */
-                        error: "Not Found";
-                        /** @enum {string} */
-                        code: "NOT_FOUND";
-                        message: string;
-                        details?: {
-                            resource: string;
-                            id?: string | number;
-                        };
-                    };
-                };
-            };
-        };
-    };
-    AdminBadgeController_assignBadge_v2: {
+    oTt_assignBadge_v2: {
         parameters: {
             query?: {
                 /** @description Badge description override */
@@ -11105,7 +22728,7 @@ export interface operations {
             };
         };
     };
-    AdminBadgeController_unassignBadge_v2: {
+    oTt_unassignBadge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -11216,7 +22839,7 @@ export interface operations {
             };
         };
     };
-    AdminLeaderboardController_rankLeaderboard_v2: {
+    bTt_rankLeaderboard_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -11382,7 +23005,7 @@ export interface operations {
             };
         };
     };
-    AdminLeaderboardController_unrankLeaderboard_v2: {
+    bTt_unrankLeaderboard_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -11539,7 +23162,7 @@ export interface operations {
             };
         };
     };
-    AdminLeaderboardController_recalculatePP_v2: {
+    bTt_recalculatePP_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -11657,7 +23280,7 @@ export interface operations {
             };
         };
     };
-    AdminLeaderboardController_setManualPP_v2: {
+    bTt_setManualPP_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -11823,7 +23446,7 @@ export interface operations {
             };
         };
     };
-    AdminLeaderboardController_qualifyLeaderboard_v2: {
+    bTt_qualifyLeaderboard_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -11979,7 +23602,7 @@ export interface operations {
             };
         };
     };
-    AdminLeaderboardController_loveLeaderboard_v2: {
+    bTt_loveLeaderboard_v2: {
         parameters: {
             query?: {
                 /** @description Realm ID (defaults to the active realm) */
@@ -12135,7 +23758,7 @@ export interface operations {
             };
         };
     };
-    AdminPermissionController_listPermissions_v2: {
+    K3_listPermissions_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12175,7 +23798,7 @@ export interface operations {
             };
         };
     };
-    AdminScoreController_deleteScore_v2: {
+    ETt_deleteScore_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12285,7 +23908,7 @@ export interface operations {
             };
         };
     };
-    AdminUploadTrustController_createDevelopmentCredential_v2: {
+    Q3_createDevelopmentCredential_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12433,7 +24056,7 @@ export interface operations {
             };
         };
     };
-    AdminUploadTrustController_revokeDevelopmentCredential_v2: {
+    Q3_revokeDevelopmentCredential_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12581,7 +24204,7 @@ export interface operations {
             };
         };
     };
-    AdminUploadTrustController_revokeOfficialBuild_v2: {
+    Q3_revokeOfficialBuild_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12729,7 +24352,324 @@ export interface operations {
             };
         };
     };
-    AdminUserController_banPlayer_v2: {
+    Q3_getOfficialBuildCompatibility_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Active official PC build compatibility grouped by Beat Saber version. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        gameVersion: string;
+                        compatibleBuildCount: number;
+                        pluginVersions: string[];
+                        buildIds: string[];
+                    }[];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    Q3_addOfficialBuildCompatibility_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @description Compatible source version override */
+                    fromGameVersion?: string;
+                    /** @description New Beat Saber game version to allow */
+                    toGameVersion: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Add a compatible Beat Saber runtime version to active official builds. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                        fromGameVersion: string;
+                        toGameVersion: string;
+                        buildsUpdated: number;
+                        targetVersions: number;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    BTt_getActiveBan_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Active player ban metadata */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        reason: string;
+                        notes: string | null;
+                        createdAt: string;
+                        autoUnban: boolean;
+                        autoUnbansAt: string | null;
+                        earliestAppealDate: string | null;
+                    } | null;
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    BTt_banPlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12862,9 +24802,48 @@ export interface operations {
                     };
                 };
             };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
         };
     };
-    AdminUserController_unbanPlayer_v2: {
+    BTt_unbanPlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -12974,7 +24953,7 @@ export interface operations {
             };
         };
     };
-    AdminUserController_silencePlayer_v2: {
+    BTt_silencePlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13097,7 +25076,7 @@ export interface operations {
             };
         };
     };
-    AdminUserController_unsilencePlayer_v2: {
+    BTt_unsilencePlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13207,7 +25186,7 @@ export interface operations {
             };
         };
     };
-    AdminUserController_updateRoleText_v2: {
+    BTt_updateRoleText_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13328,7 +25307,7 @@ export interface operations {
             };
         };
     };
-    AdminUserController_adminResetCountry_v2: {
+    BTt_adminResetCountry_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13449,7 +25428,7 @@ export interface operations {
             };
         };
     };
-    AdminUserController_updatePermissions_v2: {
+    BTt_updatePermissions_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13573,7 +25552,7 @@ export interface operations {
             };
         };
     };
-    AdminUserController_mergePlayer_v2: {
+    BTt_mergePlayer_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13762,7 +25741,176 @@ export interface operations {
             };
         };
     };
-    AdminVersionController_getVersions_v2: {
+    BTt_deleteUserData_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description User data deletion result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    n6_getVersions_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13808,7 +25956,7 @@ export interface operations {
             };
         };
     };
-    AdminVersionController_createVersion_v2: {
+    n6_createVersion_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -13958,7 +26106,7 @@ export interface operations {
             };
         };
     };
-    AdminVersionController_updateWhitelist_v2: {
+    n6_updateWhitelist_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14080,7 +26228,7 @@ export interface operations {
             };
         };
     };
-    AdminVersionController_deleteVersion_v2: {
+    n6_deleteVersion_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14190,7 +26338,7 @@ export interface operations {
             };
         };
     };
-    UserController_getMe_v2: {
+    WIt_getMe_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14211,11 +26359,14 @@ export interface operations {
                         playerNameInGame: string;
                         role: string | null;
                         avatar: string;
+                        avatarVersion: number;
                         bio: string | null;
                         country: string;
                         permissions: number;
                         banned: boolean;
                         inactive: boolean;
+                        vanity: string | null;
+                        publicLivePresenceOptOut: boolean;
                         stats: {
                             rank: number;
                             countryRank: number;
@@ -14275,7 +26426,1120 @@ export interface operations {
             };
         };
     };
-    UserController_getMyInfo_v2: {
+    WIt_getVanity_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Current vanity URL and when it can next be changed */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        slug: string | null;
+                        canChangeAt: string | null;
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_claimVanity_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @description Desired vanity URL slug */
+                    slug: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Claim or change the vanity URL for the current account */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        slug: string | null;
+                        canChangeAt: string | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_updatePinnedScores_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    pinnedScores: {
+                        scoreId: number;
+                        /** @default  */
+                        comment?: string;
+                    }[];
+                };
+            };
+        };
+        responses: {
+            /** @description Pinned scores update result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_updateProfileCustomization_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    accentColor: string | null;
+                    accentForegroundColor: string | null;
+                    accentForegroundActiveColor: string | null;
+                    supporterNameColorEnabled: boolean;
+                    badgeOrder: number[] | null;
+                    badgeComments: {
+                        [key: string]: string;
+                    } | null;
+                    statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                    enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                    chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                    sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                };
+            };
+        };
+        responses: {
+            /** @description Profile customization update result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        backgroundImage: string | null;
+                        backgroundImageVersion: number | null;
+                        accentColor: string | null;
+                        accentForegroundColor: string | null;
+                        accentForegroundActiveColor: string | null;
+                        supporterNameColorEnabled: boolean;
+                        badgeOrder: number[] | null;
+                        badgeComments: {
+                            [key: string]: string;
+                        } | null;
+                        statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                        sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_updateProfileCustomizationStyle_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    accentColor: string | null;
+                    accentForegroundColor: string | null;
+                    accentForegroundActiveColor: string | null;
+                    supporterNameColorEnabled: boolean;
+                };
+            };
+        };
+        responses: {
+            /** @description Profile style customization update result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        backgroundImage: string | null;
+                        backgroundImageVersion: number | null;
+                        accentColor: string | null;
+                        accentForegroundColor: string | null;
+                        accentForegroundActiveColor: string | null;
+                        supporterNameColorEnabled: boolean;
+                        badgeOrder: number[] | null;
+                        badgeComments: {
+                            [key: string]: string;
+                        } | null;
+                        statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                        sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                    };
+                };
+            };
+            /**
+             * @description Bad Request
+             *
+             *     Bad Request
+             */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_uploadProfileCustomizationBackground_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "multipart/form-data": {
+                    /** Format: binary */
+                    backgroundImage: string;
+                };
+            };
+        };
+        responses: {
+            /** @description Profile background upload result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        backgroundImage: string | null;
+                        backgroundImageVersion: number | null;
+                        accentColor: string | null;
+                        accentForegroundColor: string | null;
+                        accentForegroundActiveColor: string | null;
+                        supporterNameColorEnabled: boolean;
+                        badgeOrder: number[] | null;
+                        badgeComments: {
+                            [key: string]: string;
+                        } | null;
+                        statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                        sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_resetProfileCustomizationBackground_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Profile background reset result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        backgroundImage: string | null;
+                        backgroundImageVersion: number | null;
+                        accentColor: string | null;
+                        accentForegroundColor: string | null;
+                        accentForegroundActiveColor: string | null;
+                        supporterNameColorEnabled: boolean;
+                        badgeOrder: number[] | null;
+                        badgeComments: {
+                            [key: string]: string;
+                        } | null;
+                        statOrder: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        enabledStatIds: ("rankedPlays" | "rankedScore" | "rankedAcc" | "plusOnePP" | "totalPlays" | "totalScore" | "joined" | "replayViews" | "role")[] | null;
+                        chartMetricIds: ("rank" | "totalPP" | "averageAccuracy" | "totalSubmittedPlays")[] | null;
+                        sectionOrder: ("charts" | "bio" | "pinnedScores" | "scores")[] | null;
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 403;
+                        /** @enum {string} */
+                        error: "Forbidden";
+                        /** @enum {string} */
+                        code: "FORBIDDEN";
+                        message: string;
+                        details?: {
+                            reason: string;
+                        };
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "EXTERNAL_SERVICE_ERROR";
+                        message: string;
+                        details: {
+                            service: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "DATABASE_WRITE_ERROR";
+                        message: string;
+                        details: {
+                            operation: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 500;
+                        /** @enum {string} */
+                        error: "Internal Server Error";
+                        /** @enum {string} */
+                        code: "INTERNAL_SERVER_ERROR";
+                        message: string;
+                    };
+                };
+            };
+        };
+    };
+    WIt_getMyInfo_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14315,7 +27579,7 @@ export interface operations {
             };
         };
     };
-    UserController_getQuestKey_v2: {
+    WIt_getQuestKey_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14375,7 +27639,7 @@ export interface operations {
             };
         };
     };
-    UserController_canResetCountry_v2: {
+    WIt_canResetCountry_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14393,6 +27657,7 @@ export interface operations {
                     "application/json": {
                         canReset: boolean;
                         lastReset: string | null;
+                        country: string;
                     };
                 };
             };
@@ -14415,7 +27680,7 @@ export interface operations {
             };
         };
     };
-    UserController_resetCountry_v2: {
+    WIt_resetCountry_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14523,7 +27788,7 @@ export interface operations {
             };
         };
     };
-    UserController_updateBio_v2: {
+    WIt_updateBio_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14638,7 +27903,7 @@ export interface operations {
             };
         };
     };
-    UserController_updateName_v2: {
+    WIt_updateName_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14753,7 +28018,122 @@ export interface operations {
             };
         };
     };
-    UserController_uploadAvatar_v2: {
+    WIt_updateLiveSpectating_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": {
+                    /** @description Opt out of public live presence outside tournaments */
+                    publicLivePresenceOptOut: boolean;
+                };
+            };
+        };
+        responses: {
+            /** @description Public live presence preference update result */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        success: boolean;
+                    };
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "VALIDATION_ERROR";
+                        message: string;
+                        details?: {
+                            field?: string;
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "REQUEST_VALIDATION_ERROR";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    } | {
+                        /** @enum {number} */
+                        statusCode: 400;
+                        /** @enum {string} */
+                        error: "Bad Request";
+                        /** @enum {string} */
+                        code: "INVALID_PATH_PARAMETER";
+                        message: string;
+                        details: {
+                            errors: {
+                                path: string;
+                                message: string;
+                            }[];
+                        };
+                    };
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 401;
+                        /** @enum {string} */
+                        error: "Unauthorized";
+                        /** @enum {string} */
+                        code: "UNAUTHORIZED";
+                        message: string;
+                    };
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        /** @enum {number} */
+                        statusCode: 404;
+                        /** @enum {string} */
+                        error: "Not Found";
+                        /** @enum {string} */
+                        code: "NOT_FOUND";
+                        message: string;
+                        details?: {
+                            resource: string;
+                            id?: string | number;
+                        };
+                    };
+                };
+            };
+        };
+    };
+    WIt_uploadAvatar_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14907,7 +28287,7 @@ export interface operations {
             };
         };
     };
-    UserController_getReplaySlots_v2: {
+    WIt_getReplaySlots_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -14984,7 +28364,7 @@ export interface operations {
             };
         };
     };
-    UserController_refreshPatreonBenefits_v2: {
+    WIt_refreshPatreonBenefits_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15086,106 +28466,7 @@ export interface operations {
             };
         };
     };
-    UserController_redeemScoreSaber2Badge_v2: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Redeem the ScoreSaber 2 launch supporter badge */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        success: boolean;
-                    };
-                };
-            };
-            /** @description Unauthorized */
-            401: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        /** @enum {number} */
-                        statusCode: 401;
-                        /** @enum {string} */
-                        error: "Unauthorized";
-                        /** @enum {string} */
-                        code: "UNAUTHORIZED";
-                        message: string;
-                    };
-                };
-            };
-            /** @description Not Found */
-            404: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        /** @enum {number} */
-                        statusCode: 404;
-                        /** @enum {string} */
-                        error: "Not Found";
-                        /** @enum {string} */
-                        code: "NOT_FOUND";
-                        message: string;
-                        details?: {
-                            resource: string;
-                            id?: string | number;
-                        };
-                    };
-                };
-            };
-            /** @description Internal Server Error */
-            500: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        /** @enum {number} */
-                        statusCode: 500;
-                        /** @enum {string} */
-                        error: "Internal Server Error";
-                        /** @enum {string} */
-                        code: "EXTERNAL_SERVICE_ERROR";
-                        message: string;
-                        details: {
-                            service: string;
-                        };
-                    } | {
-                        /** @enum {number} */
-                        statusCode: 500;
-                        /** @enum {string} */
-                        error: "Internal Server Error";
-                        /** @enum {string} */
-                        code: "DATABASE_WRITE_ERROR";
-                        message: string;
-                        details: {
-                            operation: string;
-                        };
-                    } | {
-                        /** @enum {number} */
-                        statusCode: 500;
-                        /** @enum {string} */
-                        error: "Internal Server Error";
-                        /** @enum {string} */
-                        code: "INTERNAL_SERVER_ERROR";
-                        message: string;
-                    };
-                };
-            };
-        };
-    };
-    UserController_claimReplaySlot_v2: {
+    WIt_claimReplaySlot_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15300,7 +28581,7 @@ export interface operations {
             };
         };
     };
-    UserController_releaseReplaySlot_v2: {
+    WIt_releaseReplaySlot_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15415,7 +28696,7 @@ export interface operations {
             };
         };
     };
-    UserController_getConnections_v2: {
+    WIt_getConnections_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15433,12 +28714,12 @@ export interface operations {
                     "application/json": {
                         id: number;
                         /** @enum {string} */
-                        provider: "STEAM" | "OCULUS" | "PATREON" | "DISCORD";
+                        provider: "STEAM" | "OCULUS" | "PATREON" | "DISCORD" | "SCORESABER";
                         providerAccountId: string;
                         /** @enum {string} */
                         state: "VERIFIED" | "CONNECTED";
                         /** @enum {string} */
-                        source: "LEGACY_IMPORT" | "GAME_AUTH" | "STEAM_OPENID" | "PATREON_OAUTH" | "DISCORD_OAUTH" | "DISCORD_BOT";
+                        source: "LEGACY_IMPORT" | "GAME_AUTH" | "STEAM_OPENID" | "PATREON_OAUTH" | "DISCORD_OAUTH" | "DISCORD_BOT" | "SCORESABER_SIGNUP" | "SCORESABER_SYSTEM";
                         isPrimary: boolean;
                         /** Format: date-time */
                         connectedAt: string | null;
@@ -15465,7 +28746,7 @@ export interface operations {
             };
         };
     };
-    UserController_switchPrimaryConnection_v2: {
+    WIt_switchPrimaryConnection_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15479,7 +28760,7 @@ export interface operations {
                      * @description Primary provider to expose publicly
                      * @enum {string}
                      */
-                    provider: "STEAM" | "OCULUS";
+                    provider: "STEAM" | "OCULUS" | "SCORESABER";
                 };
             };
         };
@@ -15495,7 +28776,7 @@ export interface operations {
                         success: true;
                         publicPlayerId: string;
                         /** @enum {string} */
-                        provider: "STEAM" | "OCULUS";
+                        provider: "STEAM" | "OCULUS" | "SCORESABER";
                     };
                 };
             };
@@ -15630,7 +28911,7 @@ export interface operations {
             };
         };
     };
-    UserController_startOculusEmailMerge_v2: {
+    WIt_startOculusEmailMerge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15772,7 +29053,7 @@ export interface operations {
             };
         };
     };
-    UserController_verifyOculusEmailMerge_v2: {
+    WIt_verifyOculusEmailMerge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15804,7 +29085,7 @@ export interface operations {
                             name: string;
                             country: string;
                             /** @enum {string} */
-                            provider: "STEAM" | "OCULUS";
+                            provider: "STEAM" | "OCULUS" | "SCORESABER";
                             providerAccountId: string;
                             publicPlayerId: string;
                         };
@@ -15813,7 +29094,7 @@ export interface operations {
                             name: string;
                             country: string;
                             /** @enum {string} */
-                            provider: "STEAM" | "OCULUS";
+                            provider: "STEAM" | "OCULUS" | "SCORESABER";
                             providerAccountId: string;
                             publicPlayerId: string;
                         };
@@ -15971,7 +29252,7 @@ export interface operations {
             };
         };
     };
-    UserController_getAccountMergeChallenge_v2: {
+    WIt_getAccountMergeChallenge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -15997,7 +29278,7 @@ export interface operations {
                             name: string;
                             country: string;
                             /** @enum {string} */
-                            provider: "STEAM" | "OCULUS";
+                            provider: "STEAM" | "OCULUS" | "SCORESABER";
                             providerAccountId: string;
                             publicPlayerId: string;
                         };
@@ -16006,7 +29287,7 @@ export interface operations {
                             name: string;
                             country: string;
                             /** @enum {string} */
-                            provider: "STEAM" | "OCULUS";
+                            provider: "STEAM" | "OCULUS" | "SCORESABER";
                             providerAccountId: string;
                             publicPlayerId: string;
                         };
@@ -16160,7 +29441,7 @@ export interface operations {
             };
         };
     };
-    UserController_confirmAccountMerge_v2: {
+    WIt_confirmAccountMerge_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -16333,7 +29614,7 @@ export interface operations {
             };
         };
     };
-    UserController_removeConnection_v2: {
+    WIt_removeConnection_v2: {
         parameters: {
             query?: never;
             header?: never;
@@ -16443,7 +29724,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_authenticate[0]_v1": {
+    "pRt_authenticate[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -16460,7 +29741,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getLeaderboard[0]_v1": {
+    "pRt_getLeaderboard[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16525,7 +29806,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getLeaderboardAroundFriends[0]_v1": {
+    "pRt_getLeaderboardAroundFriends[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16590,7 +29871,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getLeaderboardAroundCountry[0]_v1": {
+    "pRt_getLeaderboardAroundCountry[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16655,7 +29936,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getLeaderboardAroundRegion[0]_v1": {
+    "pRt_getLeaderboardAroundRegion[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16720,7 +30001,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getLeaderboardAroundPlayer[0]_v1": {
+    "pRt_getLeaderboardAroundPlayer[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -16741,7 +30022,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getPlayers[0]_v1": {
+    "pRt_getPlayers[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16802,7 +30083,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getPlayersAroundCountry[0]_v1": {
+    "pRt_getPlayersAroundCountry[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16863,7 +30144,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getPlayersAroundFriends[0]_v1": {
+    "pRt_getPlayersAroundFriends[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16924,7 +30205,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getPlayersAroundRegion[0]_v1": {
+    "pRt_getPlayersAroundRegion[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -16985,7 +30266,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_getPlayersAroundPlayer[0]_v1": {
+    "pRt_getPlayersAroundPlayer[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17002,7 +30283,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_uploadScore[0]_v1": {
+    "pRt_uploadScore[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17019,7 +30300,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_downloadReplay[0]_v1": {
+    "pRt_downloadReplay[0]_v1": {
         parameters: {
             query: {
                 playerId: string;
@@ -17081,7 +30362,7 @@ export interface operations {
             };
         };
     };
-    "V1GameController_healthCheck[0]_v1": {
+    "pRt_healthCheck[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17098,7 +30379,7 @@ export interface operations {
             };
         };
     };
-    V1PublicController_legacyApi: {
+    B9_legacyApi: {
         parameters: {
             query?: {
                 /** @description Legacy action to run: getPlays returns total plays for a song hash, get-leaderboards returns the old leaderboard listing payload */
@@ -17176,7 +30457,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getPlayerFull[0]_v1": {
+    "B9_getPlayerFull[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17195,7 +30476,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getPlayerBasic[0]_v1": {
+    "B9_getPlayerBasic[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17214,7 +30495,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getPlayerScores[0]_v1": {
+    "B9_getPlayerScores[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -17281,7 +30562,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getPlayers[0]_v1": {
+    "B9_getPlayers[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -17348,7 +30629,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getPlayerCount[0]_v1": {
+    "B9_getPlayerCount[0]_v1": {
         parameters: {
             query?: {
                 countries?: string;
@@ -17411,7 +30692,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getLeaderboardById[0]_v1": {
+    "B9_getLeaderboardById[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17430,7 +30711,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getLeaderboardByHash[0]_v1": {
+    "B9_getLeaderboardByHash[0]_v1": {
         parameters: {
             query: {
                 difficulty: number;
@@ -17494,7 +30775,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getLeaderboardScoresById[0]_v1": {
+    "B9_getLeaderboardScoresById[0]_v1": {
         parameters: {
             query?: {
                 page?: number;
@@ -17561,7 +30842,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getLeaderboardScoresByHash[0]_v1": {
+    "B9_getLeaderboardScoresByHash[0]_v1": {
         parameters: {
             query: {
                 page?: number;
@@ -17630,7 +30911,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getLeaderboardDifficulties[0]_v1": {
+    "B9_getLeaderboardDifficulties[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17649,7 +30930,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getLeaderboards[0]_v1": {
+    "B9_getLeaderboards[0]_v1": {
         parameters: {
             query?: {
                 verified?: string;
@@ -17721,7 +31002,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getTopRankRequests[0]_v1": {
+    "B9_getTopRankRequests[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17738,7 +31019,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getRankRequestsBelowTop[0]_v1": {
+    "B9_getRankRequestsBelowTop[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17755,7 +31036,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getRankRequest[0]_v1": {
+    "B9_getRankRequest[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
@@ -17774,7 +31055,7 @@ export interface operations {
             };
         };
     };
-    "V1PublicController_getRankRequestByLeaderboardId[0]_v1": {
+    "B9_getRankRequestByLeaderboardId[0]_v1": {
         parameters: {
             query?: never;
             header?: never;
