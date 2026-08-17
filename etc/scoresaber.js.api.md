@@ -106,7 +106,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_legacyApi"];
+        get: operations["B9_legacyApi"];
         put?: never;
         post?: never;
         delete?: never;
@@ -123,7 +123,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_healthCheck[0]_v1"];
+        get: operations["pRt_healthCheck[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -142,7 +142,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["V1GameController_authenticate[0]_v1"];
+        post: operations["pRt_authenticate[0]_v1"];
         delete?: never;
         options?: never;
         head?: never;
@@ -157,7 +157,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundCountry[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundCountry[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -174,7 +174,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundFriends[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundFriends[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -191,7 +191,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundPlayer[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundPlayer[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -208,7 +208,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboardAroundRegion[0]_v1"];
+        get: operations["pRt_getLeaderboardAroundRegion[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -225,7 +225,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getLeaderboard[0]_v1"];
+        get: operations["pRt_getLeaderboard[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -242,7 +242,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayers[0]_v1"];
+        get: operations["pRt_getPlayers[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -259,7 +259,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundCountry[0]_v1"];
+        get: operations["pRt_getPlayersAroundCountry[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -276,7 +276,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundFriends[0]_v1"];
+        get: operations["pRt_getPlayersAroundFriends[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -293,7 +293,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundPlayer[0]_v1"];
+        get: operations["pRt_getPlayersAroundPlayer[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -310,7 +310,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_getPlayersAroundRegion[0]_v1"];
+        get: operations["pRt_getPlayersAroundRegion[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -327,7 +327,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1GameController_downloadReplay[0]_v1"];
+        get: operations["pRt_downloadReplay[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -346,7 +346,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["V1GameController_uploadScore[0]_v1"];
+        post: operations["pRt_uploadScore[0]_v1"];
         delete?: never;
         options?: never;
         head?: never;
@@ -361,7 +361,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardByHash[0]_v1"];
+        get: operations["B9_getLeaderboardByHash[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -378,7 +378,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardScoresByHash[0]_v1"];
+        get: operations["B9_getLeaderboardScoresByHash[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -395,7 +395,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardById[0]_v1"];
+        get: operations["B9_getLeaderboardById[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -412,7 +412,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardScoresById[0]_v1"];
+        get: operations["B9_getLeaderboardScoresById[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -429,7 +429,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboardDifficulties[0]_v1"];
+        get: operations["B9_getLeaderboardDifficulties[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -446,7 +446,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getLeaderboards[0]_v1"];
+        get: operations["B9_getLeaderboards[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -463,7 +463,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerBasic[0]_v1"];
+        get: operations["B9_getPlayerBasic[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -480,7 +480,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerFull[0]_v1"];
+        get: operations["B9_getPlayerFull[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -497,7 +497,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerScores[0]_v1"];
+        get: operations["B9_getPlayerScores[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -514,7 +514,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayers[0]_v1"];
+        get: operations["B9_getPlayers[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -531,7 +531,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getPlayerCount[0]_v1"];
+        get: operations["B9_getPlayerCount[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -548,7 +548,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getRankRequestByLeaderboardId[0]_v1"];
+        get: operations["B9_getRankRequestByLeaderboardId[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -565,7 +565,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getRankRequest[0]_v1"];
+        get: operations["B9_getRankRequest[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -582,7 +582,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getRankRequestsBelowTop[0]_v1"];
+        get: operations["B9_getRankRequestsBelowTop[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -599,24 +599,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["V1PublicController_getTopRankRequests[0]_v1"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    // (undocumented)
-    "/api/v2": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["RootController_getData_v2"];
+        get: operations["B9_getTopRankRequests[0]_v1"];
         put?: never;
         post?: never;
         delete?: never;
@@ -633,9 +616,26 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AdminBadgeController_getAllBadges_v2"];
+        get: operations["oTt_getAllBadges_v2"];
         put?: never;
-        post: operations["AdminBadgeController_createBadge_v2"];
+        post: operations["oTt_createBadge_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/admin/badges/player/{playerId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["oTt_getPlayerBadges_v2"];
+        put: operations["oTt_replacePlayerBadges_v2"];
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -651,9 +651,9 @@ export interface paths {
             cookie?: never;
         };
         get?: never;
-        put: operations["AdminBadgeController_updateBadge_v2"];
+        put: operations["oTt_updateBadge_v2"];
         post?: never;
-        delete: operations["AdminBadgeController_deleteBadge_v2"];
+        delete: operations["oTt_deleteBadge_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -669,8 +669,8 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminBadgeController_assignBadge_v2"];
-        delete: operations["AdminBadgeController_unassignBadge_v2"];
+        post: operations["oTt_assignBadge_v2"];
+        delete: operations["oTt_unassignBadge_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -686,7 +686,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_loveLeaderboard_v2"];
+        post: operations["bTt_loveLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -703,7 +703,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_recalculatePP_v2"];
+        post: operations["bTt_recalculatePP_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -720,7 +720,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_setManualPP_v2"];
+        post: operations["bTt_setManualPP_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -737,7 +737,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_qualifyLeaderboard_v2"];
+        post: operations["bTt_qualifyLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -754,7 +754,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_rankLeaderboard_v2"];
+        post: operations["bTt_rankLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -771,7 +771,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminLeaderboardController_unrankLeaderboard_v2"];
+        post: operations["bTt_unrankLeaderboard_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -786,7 +786,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AdminPermissionController_listPermissions_v2"];
+        get: operations["K3_listPermissions_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -806,7 +806,7 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["AdminScoreController_deleteScore_v2"];
+        delete: operations["ETt_deleteScore_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -822,7 +822,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUploadTrustController_createDevelopmentCredential_v2"];
+        post: operations["Q3_createDevelopmentCredential_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -839,7 +839,24 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUploadTrustController_revokeDevelopmentCredential_v2"];
+        post: operations["Q3_revokeDevelopmentCredential_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/admin/upload-trust/official-builds/compatibility": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Q3_getOfficialBuildCompatibility_v2"];
+        put?: never;
+        post: operations["Q3_addOfficialBuildCompatibility_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -856,7 +873,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUploadTrustController_revokeOfficialBuild_v2"];
+        post: operations["Q3_revokeOfficialBuild_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -871,10 +888,27 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
+        get: operations["BTt_getActiveBan_v2"];
+        put?: never;
+        post: operations["BTt_banPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/admin/user/{id}/data": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_banPlayer_v2"];
-        delete?: never;
+        post?: never;
+        delete: operations["BTt_deleteUserData_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -890,7 +924,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_mergePlayer_v2"];
+        post: operations["BTt_mergePlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -907,7 +941,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_updatePermissions_v2"];
+        post: operations["BTt_updatePermissions_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -924,7 +958,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_adminResetCountry_v2"];
+        post: operations["BTt_adminResetCountry_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -941,7 +975,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_updateRoleText_v2"];
+        post: operations["BTt_updateRoleText_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -958,7 +992,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_silencePlayer_v2"];
+        post: operations["BTt_silencePlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -975,7 +1009,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_unbanPlayer_v2"];
+        post: operations["BTt_unbanPlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -992,7 +1026,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminUserController_unsilencePlayer_v2"];
+        post: operations["BTt_unsilencePlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1007,9 +1041,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AdminVersionController_getVersions_v2"];
+        get: operations["n6_getVersions_v2"];
         put?: never;
-        post: operations["AdminVersionController_createVersion_v2"];
+        post: operations["n6_createVersion_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1027,7 +1061,7 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["AdminVersionController_deleteVersion_v2"];
+        delete: operations["n6_deleteVersion_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -1043,7 +1077,41 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AdminVersionController_updateWhitelist_v2"];
+        post: operations["n6_updateWhitelist_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/device/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["U6_startDeviceLogin_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/device/status": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["U6_getDeviceLoginStatus_v2"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -1058,7 +1126,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_discordLogin_v2"];
+        get: operations["SDt_discordLogin_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1075,7 +1143,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_discordCallback_v2"];
+        get: operations["SDt_discordCallback_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1094,7 +1162,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AuthController_startEmailLogin_v2"];
+        post: operations["SDt_startEmailLogin_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1111,7 +1179,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AuthController_verifyEmailLogin_v2"];
+        post: operations["SDt_verifyEmailLogin_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1128,7 +1196,228 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["AuthController_logout_v2"];
+        post: operations["SDt_logout_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/passkey/login/options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_startAuthentication_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/passkey/login/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_verifyAuthentication_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/passkey/register/options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_startRegistration_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/passkey/register/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G6_verifyRegistration_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/passkeys": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["G6_listPasskeys_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/passkeys/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["G6_deletePasskey_v2"];
+        options?: never;
+        head?: never;
+        patch: operations["G6_renamePasskey_v2"];
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/change": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_changePassword_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/credential": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Z6_getPasswordCredential_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_loginWithPassword_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/reset/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_completePasswordReset_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/reset/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_startPasswordReset_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/setup/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_completePasswordSetup_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/password/setup/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_startPasswordSetup_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1143,7 +1432,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_patreonLogin_v2"];
+        get: operations["SDt_patreonLogin_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1160,9 +1449,43 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_patreonCallback_v2"];
+        get: operations["SDt_patreonCallback_v2"];
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/signup/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_completeSignup_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/auth/signup/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["Z6_startSignup_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1177,7 +1500,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_steamLogin_v2"];
+        get: operations["SDt_steamLogin_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1194,7 +1517,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_steamCallback_v2"];
+        get: operations["SDt_steamCallback_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1211,7 +1534,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["AuthController_getToken_v2"];
+        get: operations["SDt_getToken_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1230,7 +1553,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["GameController_authenticate_v2"];
+        post: operations["IOt_authenticate_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1247,7 +1570,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["GameBuildController_registerOfficialBuild_v2"];
+        post: operations["e8_registerOfficialBuild_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1263,7 +1586,7 @@ export interface paths {
             cookie?: never;
         };
         get?: never;
-        put: operations["GameController_setActiveRealms_v2"];
+        put: operations["IOt_setActiveRealms_v2"];
         post?: never;
         delete?: never;
         options?: never;
@@ -1281,7 +1604,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["GameController_uploadScore_v2"];
+        post: operations["IOt_uploadScore_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1296,7 +1619,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["HealthController_getHealth_v2"];
+        get: operations["d8_getHealth_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1313,7 +1636,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardListings_v2"];
+        get: operations["O8_getLeaderboardListings_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1330,7 +1653,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getDifficultiesForHash_v2"];
+        get: operations["O8_getDifficultiesForHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1347,7 +1670,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardByHash_v2"];
+        get: operations["O8_getLeaderboardByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1364,7 +1687,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardScoresByHash_v2"];
+        get: operations["O8_getLeaderboardScoresByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1381,7 +1704,24 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardById_v2"];
+        get: operations["O8_getLeaderboardById_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/leaderboards/{id}/play-stats": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["O8_getLeaderboardPlayStatsById_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1398,9 +1738,468 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["LeaderboardController_getLeaderboardScoresById_v2"];
+        get: operations["O8_getLeaderboardScoresById_v2"];
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/player/rooms/by-invite-code/{inviteCode}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_getPlayerRoomByInviteCode_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/player/tournaments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_listPlayerTournaments_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/player/tournaments/{tournamentId}/rooms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_listPlayerRooms_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/player/tournaments/{tournamentId}/rooms/{matchId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["y5_getPlayerRoom_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["C5_listTournaments_v2"];
+        put?: never;
+        post: operations["C5_createTournament_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/options": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["C5_getWorkflowOptions_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/authorized-players": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["x5_listAuthorizedPlayers_v2"];
+        put: operations["x5_syncAuthorizedPlayers_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/roles": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["x5_listRoles_v2"];
+        put?: never;
+        post: operations["x5_upsertRole_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/roles/{roleId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["x5_deleteRole_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/roles/{roleId}/assign": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["x5_assignRole_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/roles/{roleId}/assignments/{playerId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["x5_unassignRole_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["m5_listRooms_v2"];
+        put?: never;
+        post: operations["m5_upsertRoom_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/view": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["m5_getRoomsView_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["m5_deleteRoom_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/close": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["m5_closeRoom_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/members": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["m5_setRoomMembers_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/players/{playerId}/bottify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_bottifyPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/players/{playerId}/unbottify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_unbottifyPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/prompt": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_prompt_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/return-to-menu": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_returnToMenu_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/song": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["m5_setRoomSong_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/start": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_startMap_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/rooms/{matchId}/view": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["m5_getRoomView_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/settings": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["C5_getSettings_v2"];
+        put: operations["C5_upsertSettings_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/teams": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["x5_listTeams_v2"];
+        put?: never;
+        post: operations["x5_upsertTeam_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/teams/{teamId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["x5_deleteTeam_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/live/tournaments/{tournamentId}/watch/follow": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["f5_followRoom_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1415,7 +2214,24 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["MapController_getMapListings_v2"];
+        get: operations["P5_getMapListings_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/maps/hash/{hash}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["P5_getMapByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1432,7 +2248,126 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["MapController_getMapById_v2"];
+        get: operations["P5_getMapById_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/authorize/approve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["R7_approveAuthorization_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/authorize/info": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["R7_getAuthorizeInfo_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/clients": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["P7_listClients_v2"];
+        put?: never;
+        post: operations["P7_createClient_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/clients/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["P7_revokeClient_v2"];
+        options?: never;
+        head?: never;
+        patch: operations["P7_updateClient_v2"];
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/clients/{id}/rotate-secret": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["P7_rotateSecret_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/token": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["R7_token_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/oauth/userinfo": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["R7_userinfo_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1451,7 +2386,24 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerRelationshipController_followPlayer_v2"];
+        post: operations["U7_followPlayer_v2"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/player/{id}/relationships": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["U7_getRelationships_v2"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -1468,7 +2420,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerRelationshipController_unfollowPlayer_v2"];
+        post: operations["U7_unfollowPlayer_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1483,7 +2435,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayers_v2"];
+        get: operations["Y7_getPlayers_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1500,7 +2452,41 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerCount_v2"];
+        get: operations["Y7_getPlayerCount_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/players/live-ids": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getLivePlayerIdAliases_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/players/vanity/{slug}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getPlayerByVanity_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1517,7 +2503,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayer_v2"];
+        get: operations["Y7_getPlayer_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1534,7 +2520,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerAliasController_getAliases_v2"];
+        get: operations["PFt_getAliases_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1553,7 +2539,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerAliasController_disableAllAliases_v2"];
+        post: operations["PFt_disableAllAliases_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1570,7 +2556,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["PlayerAliasController_disableAlias_v2"];
+        post: operations["PFt_disableAlias_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1585,7 +2571,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerBasic_v2"];
+        get: operations["Y7_getPlayerBasic_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1602,7 +2588,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getGlobalPlayerHistory_v2"];
+        get: operations["Y7_getGlobalPlayerHistory_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1619,9 +2605,43 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerHistory_v2"];
+        get: operations["Y7_getPlayerHistory_v2"];
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/players/{id}/profile": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getPlayerProfile_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/players/{id}/report": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["G7_submitProfileReport_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1636,7 +2656,24 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["PlayerController_getPlayerScores_v2"];
+        get: operations["Y7_getPlayerScores_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/players/{id}/scores/hash/{hash}/{mode}/{difficulty}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["Y7_getPlayerScoreByHash_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1653,9 +2690,9 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RankingController_getRequests_v2"];
+        get: operations["r9_getRequests_v2"];
         put?: never;
-        post: operations["RankingController_createRequest_v2"];
+        post: operations["r9_createRequest_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1672,7 +2709,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_createUnrankRequest_v2"];
+        post: operations["r9_createUnrankRequest_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1687,8 +2724,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RankingController_getRequestById_v2"];
-        put: operations["RankingController_replaceRequest_v2"];
+        get: operations["r9_getRequestById_v2"];
+        put: operations["r9_replaceRequest_v2"];
         post?: never;
         delete?: never;
         options?: never;
@@ -1706,7 +2743,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_approve_v2"];
+        post: operations["r9_approve_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1723,7 +2760,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_deny_v2"];
+        post: operations["r9_deny_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1740,7 +2777,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_qatComment_v2"];
+        post: operations["r9_qatComment_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1758,10 +2795,10 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["RankingController_qatDeleteComment_v2"];
+        delete: operations["r9_qatDeleteComment_v2"];
         options?: never;
         head?: never;
-        patch: operations["RankingController_qatEditComment_v2"];
+        patch: operations["r9_qatEditComment_v2"];
         trace?: never;
     };
     // (undocumented)
@@ -1774,7 +2811,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_qatVote_v2"];
+        post: operations["r9_qatVote_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1791,7 +2828,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_qualify_v2"];
+        post: operations["r9_qualify_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1808,7 +2845,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_rtComment_v2"];
+        post: operations["r9_rtComment_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1826,10 +2863,10 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["RankingController_rtDeleteComment_v2"];
+        delete: operations["r9_rtDeleteComment_v2"];
         options?: never;
         head?: never;
-        patch: operations["RankingController_rtEditComment_v2"];
+        patch: operations["r9_rtEditComment_v2"];
         trace?: never;
     };
     // (undocumented)
@@ -1842,7 +2879,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["RankingController_rtVote_v2"];
+        post: operations["r9_rtVote_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1857,7 +2894,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RealmController_getRealms_v2"];
+        get: operations["o9_getRealms_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1874,7 +2911,24 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["RealmController_getRealmById_v2"];
+        get: operations["o9_getRealmById_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/realms/{id}/pp-curve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["o9_getRealmPPCurve_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1891,7 +2945,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_getScore_v2"];
+        get: operations["f9_getScore_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1908,7 +2962,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_getScoreHistory_v2"];
+        get: operations["f9_getScoreHistory_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1925,7 +2979,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_downloadReplay_v2"];
+        get: operations["f9_downloadReplay_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1942,7 +2996,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["ScoreController_getScoreStats_v2"];
+        get: operations["f9_getScoreStats_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1959,8 +3013,93 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getMe_v2"];
+        get: operations["WIt_getMe_v2"];
         put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/user/@me/pinned-scores": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["WIt_updatePinnedScores_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/user/@me/profile-customization": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["WIt_updateProfileCustomization_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/user/@me/profile-customization/background": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["WIt_uploadProfileCustomizationBackground_v2"];
+        delete: operations["WIt_resetProfileCustomizationBackground_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/user/@me/profile-customization/style": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["WIt_updateProfileCustomizationStyle_v2"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/user/@me/vanity": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["WIt_getVanity_v2"];
+        put: operations["WIt_claimVanity_v2"];
         post?: never;
         delete?: never;
         options?: never;
@@ -1978,7 +3117,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_startOculusEmailMerge_v2"];
+        post: operations["WIt_startOculusEmailMerge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -1995,7 +3134,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_verifyOculusEmailMerge_v2"];
+        post: operations["WIt_verifyOculusEmailMerge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2010,7 +3149,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getAccountMergeChallenge_v2"];
+        get: operations["WIt_getAccountMergeChallenge_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2029,7 +3168,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_confirmAccountMerge_v2"];
+        post: operations["WIt_confirmAccountMerge_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2046,7 +3185,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_uploadAvatar_v2"];
+        post: operations["WIt_uploadAvatar_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2061,7 +3200,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_canResetCountry_v2"];
+        get: operations["WIt_canResetCountry_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2078,7 +3217,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getConnections_v2"];
+        get: operations["WIt_getConnections_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2097,7 +3236,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_switchPrimaryConnection_v2"];
+        post: operations["WIt_switchPrimaryConnection_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2115,7 +3254,24 @@ export interface paths {
         get?: never;
         put?: never;
         post?: never;
-        delete: operations["UserController_removeConnection_v2"];
+        delete: operations["WIt_removeConnection_v2"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    // (undocumented)
+    "/api/v2/user/live-spectating": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["WIt_updateLiveSpectating_v2"];
+        delete?: never;
         options?: never;
         head?: never;
         patch?: never;
@@ -2129,7 +3285,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getMyInfo_v2"];
+        get: operations["WIt_getMyInfo_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2148,24 +3304,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_refreshPatreonBenefits_v2"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    // (undocumented)
-    "/api/v2/user/perks/score-saber-2-badge": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["UserController_redeemScoreSaber2Badge_v2"];
+        post: operations["WIt_refreshPatreonBenefits_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2180,7 +3319,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getQuestKey_v2"];
+        get: operations["WIt_getQuestKey_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2197,7 +3336,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get: operations["UserController_getReplaySlots_v2"];
+        get: operations["WIt_getReplaySlots_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2216,8 +3355,8 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_claimReplaySlot_v2"];
-        delete: operations["UserController_releaseReplaySlot_v2"];
+        post: operations["WIt_claimReplaySlot_v2"];
+        delete: operations["WIt_releaseReplaySlot_v2"];
         options?: never;
         head?: never;
         patch?: never;
@@ -2233,7 +3372,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_resetCountry_v2"];
+        post: operations["WIt_resetCountry_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2250,7 +3389,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_updateBio_v2"];
+        post: operations["WIt_updateBio_v2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -2267,7 +3406,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        post: operations["UserController_updateName_v2"];
+        post: operations["WIt_updateName_v2"];
         delete?: never;
         options?: never;
         head?: never;
